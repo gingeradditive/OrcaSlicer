@@ -52,7 +52,7 @@ enum AuthorizationType {
 enum InfillPattern : int {
     ipConcentric, ipRectilinear, ipGrid, ipLine, ipCubic, ipTriangles, ipStars, ipGyroid, ipHoneycomb, ipAdaptiveCubic, ipMonotonic, ipMonotonicLine, ipAlignedRectilinear, ip3DHoneycomb,
     ipHilbertCurve, ipArchimedeanChords, ipOctagramSpiral, ipSupportCubic, ipSupportBase, ipConcentricInternal,
-    ipLightning, ipCrossHatch,
+    ipLightning, ipCrossHatch, ipQuarterCubic,
     ipCount,
 };
 
@@ -266,7 +266,7 @@ enum BedType {
 // BBS
 enum LayerSeq {
     flsAuto, 
-    flsCutomize
+    flsCustomize
 };
 
 // BBS
@@ -1172,9 +1172,17 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionBool,                support_multi_bed_types))
 
     // Small Area Infill Flow Compensation
-    ((ConfigOptionStrings,              small_area_infill_flow_compensation_model))
+    ((ConfigOptionStrings,             small_area_infill_flow_compensation_model))
 
     ((ConfigOptionBool,                has_scarf_joint_seam))
+
+    ((ConfigOptionBool,                pellet_modded_printer))
+    ((ConfigOptionBool,                use_extruder_rotation_volume))
+    ((ConfigOptionBool,                use_active_pellet_feeding))
+    ((ConfigOptionStrings,             active_feeder_motor_name))
+    ((ConfigOptionFloats,              extruder_rotation_volume))
+    ((ConfigOptionFloats,              mixing_stepper_rotation_volume))
+
 )
 
 // This object is mapped to Perl as Slic3r::Config::Print.

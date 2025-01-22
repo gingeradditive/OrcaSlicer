@@ -318,17 +318,27 @@ std::string Preset::remove_suffix_modified(const std::string &name)
 // Update new extruder fields at the printer profile.
 void Preset::normalize(DynamicPrintConfig &config)
 {
-    // BBS
-    auto* filament_diameter = dynamic_cast<const ConfigOptionFloats*>(config.option("filament_diameter"));
-    if (filament_diameter != nullptr)
-        // Loaded the FFF Printer settings. Verify, that all extruder dependent values have enough values.
-        config.set_num_filaments((unsigned int)filament_diameter->values.size());
+    size_t n = 1;
+    if (config.option("single_extruder_multi_material") == nullptr || config.opt_bool("single_extruder_multi_material")) {
+        // BBS
+        auto* filament_diameter = dynamic_cast<const ConfigOptionFloats*>(config.option("filament_diameter"));
+        if (filament_diameter != nullptr) {
+            n = filament_diameter->values.size();
+            // Loaded the FFF Printer settings. Verify, that all extruder dependent values have enough values.
+            config.set_num_filaments((unsigned int) n);
+        }
+    } else {
+        auto* nozzle_diameter = dynamic_cast<const ConfigOptionFloats*>(config.option("nozzle_diameter"));
+        if (nozzle_diameter != nullptr) {
+            n = nozzle_diameter->values.size();
+            // Loaded the FFF Printer settings. Verify, that all extruder dependent values have enough values.
+            config.set_num_extruders((unsigned int) n);
+        }
+    }
 
     if (config.option("filament_diameter") != nullptr) {
         // This config contains single or multiple filament presets.
         // Ensure that the filament preset vector options contain the correct number of values.
-        // BBS
-        size_t n = (filament_diameter == nullptr) ? 1 : filament_diameter->values.size();
         const auto &defaults = FullPrintConfig::defaults();
         for (const std::string &key : Preset::filament_options()) {
             if (key == "compatible_prints" || key == "compatible_printers")
@@ -818,7 +828,9 @@ static std::vector<std::string> s_Preset_print_options {
 };
 
 static std::vector<std::string> s_Preset_filament_options {
-    /*"filament_colour", */ "default_filament_colour","required_nozzle_HRC","filament_diameter", "pellet_flow_coefficient", "filament_type", "filament_soluble", "filament_is_support",
+    /*"filament_colour", */ "default_filament_colour", "required_nozzle_HRC", "filament_diameter", "pellet_flow_coefficient",
+    "pellet_flow_coefficient", "extruder_rotation_volume", "mixing_stepper_rotation_volume", "filament_type", "filament_soluble",
+    "filament_is_support",
     "filament_max_volumetric_speed",
     "filament_flow_ratio", "filament_density", "filament_cost", "filament_minimal_purge_on_wipe_tower",
     "nozzle_temperature", "nozzle_temperature_initial_layer",
@@ -876,7 +888,9 @@ static std::vector<std::string> s_Preset_printer_options {
     "cooling_tube_retraction",
     "cooling_tube_length", "high_current_on_filament_swap", "parking_pos_retraction", "extra_loading_move", "purge_in_prime_tower", "enable_filament_ramming",
     "z_offset",
-    "disable_m73", "preferred_orientation", "emit_machine_limits_to_gcode", "pellet_modded_printer", "support_multi_bed_types","bed_mesh_min","bed_mesh_max","bed_mesh_probe_distance", "adaptive_bed_mesh_margin", "enable_long_retraction_when_cut","long_retractions_when_cut","retraction_distances_when_cut"
+    "disable_m73", "preferred_orientation", "emit_machine_limits_to_gcode", 
+    "pellet_modded_printer", "use_extruder_rotation_volume", "use_active_pellet_feeding", "active_feeder_motor_name", 
+    "support_multi_bed_types","bed_mesh_min","bed_mesh_max","bed_mesh_probe_distance", "adaptive_bed_mesh_margin", "enable_long_retraction_when_cut","long_retractions_when_cut","retraction_distances_when_cut"
     };
 
 static std::vector<std::string> s_Preset_sla_print_options {

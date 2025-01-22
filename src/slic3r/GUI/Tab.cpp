@@ -1064,26 +1064,24 @@ void Tab::on_roll_back_value(const bool to_sys /*= true*/)
                 load_key_value("printable_area", true/*some value*/, true);
             }
         }
-        //if (group->title == "Profile dependencies") {
-        //    // "compatible_printers" option doesn't exists in Printer Settimgs Tab
-        //    if (m_type != Preset::TYPE_PRINTER && (m_options_list["compatible_printers"] & os) == 0) {
-        //        to_sys ? group->back_to_sys_value("compatible_printers") : group->back_to_initial_value("compatible_printers");
-        //        load_key_value("compatible_printers", true/*some value*/, true);
+        if (group->title == "Profile dependencies") {
+            if (m_type != Preset::TYPE_PRINTER && (m_options_list["compatible_printers"] & os) == 0) {
+                to_sys ? group->back_to_sys_value("compatible_printers") : group->back_to_initial_value("compatible_printers");
+                load_key_value("compatible_printers", true/*some value*/, true);
 
-        //        bool is_empty = m_config->option<ConfigOptionStrings>("compatible_printers")->values.empty();
-        //        m_compatible_printers.checkbox->SetValue(is_empty);
-        //        is_empty ? m_compatible_printers.btn->Disable() : m_compatible_printers.btn->Enable();
-        //    }
-        //    // "compatible_prints" option exists only in Filament Settimgs and Materials Tabs
-        //    if ((m_type == Preset::TYPE_FILAMENT || m_type == Preset::TYPE_SLA_MATERIAL) && (m_options_list["compatible_prints"] & os) == 0) {
-        //        to_sys ? group->back_to_sys_value("compatible_prints") : group->back_to_initial_value("compatible_prints");
-        //        load_key_value("compatible_prints", true/*some value*/, true);
+                bool is_empty = m_config->option<ConfigOptionStrings>("compatible_printers")->values.empty();
+                m_compatible_printers.checkbox->SetValue(is_empty);
+                is_empty ? m_compatible_printers.btn->Disable() : m_compatible_printers.btn->Enable();
+            }
+            if ((m_type == Preset::TYPE_FILAMENT || m_type == Preset::TYPE_SLA_MATERIAL) && (m_options_list["compatible_prints"] & os) == 0) {
+                to_sys ? group->back_to_sys_value("compatible_prints") : group->back_to_initial_value("compatible_prints");
+                load_key_value("compatible_prints", true/*some value*/, true);
 
-        //        bool is_empty = m_config->option<ConfigOptionStrings>("compatible_prints")->values.empty();
-        //        m_compatible_prints.checkbox->SetValue(is_empty);
-        //        is_empty ? m_compatible_prints.btn->Disable() : m_compatible_prints.btn->Enable();
-        //    }
-        //}
+                bool is_empty = m_config->option<ConfigOptionStrings>("compatible_prints")->values.empty();
+                m_compatible_prints.checkbox->SetValue(is_empty);
+                is_empty ? m_compatible_prints.btn->Disable() : m_compatible_prints.btn->Enable();
+            }
+        }
         for (const auto &kvp : group->opt_map()) {
             const std::string& opt_key = kvp.first;
             if ((m_options_list[opt_key] & os) == 0)
@@ -1380,6 +1378,11 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
         return;
     }
 
+    if (opt_key == "compatible_prints")
+        this->compatible_widget_reload(m_compatible_prints);
+    if (opt_key == "compatible_printers")
+        this->compatible_widget_reload(m_compatible_printers);
+
     const bool is_fff = supports_printer_technology(ptFFF);
     ConfigOptionsGroup* og_freq_chng_params = wxGetApp().sidebar().og_freq_chng_params(is_fff);
     //BBS: GUI refactor
@@ -1417,13 +1420,12 @@ void Tab::on_value_change(const std::string& opt_key, const boost::any& value)
     {
         double double_value = Preset::convert_pellet_flow_to_filament_diameter(boost::any_cast<double>(value));
         m_config->set_key_value("filament_diameter", new ConfigOptionFloats{double_value});
-	}
+    }
 
     if (opt_key == "filament_diameter") {
         double double_value = Preset::convert_filament_diameter_to_pellet_flow(boost::any_cast<double>(value));
         m_config->set_key_value("pellet_flow_coefficient", new ConfigOptionFloats{double_value});
     }
-    
 
     if (opt_key == "single_extruder_multi_material"  ){
         const auto bSEMM = m_config->opt_bool("single_extruder_multi_material");
@@ -1855,7 +1857,7 @@ void Tab::build_preset_description_line(ConfigOptionsGroup* optgroup)
     };
 
     auto detach_preset_btn = [this](wxWindow* parent) {
-        m_detach_preset_btn = new ScalableButton(parent, wxID_ANY, "lock_normal_sys", "",
+        m_detach_preset_btn = new ScalableButton(parent, wxID_ANY, "lock_normal", "",
                                                  wxDefaultSize, wxDefaultPosition, wxBU_LEFT | wxBU_EXACTFIT, true);
         ScalableButton* btn = m_detach_preset_btn;
         btn->SetFont(Slic3r::GUI::wxGetApp().normal_font());
@@ -1863,25 +1865,25 @@ void Tab::build_preset_description_line(ConfigOptionsGroup* optgroup)
         auto sizer = new wxBoxSizer(wxHORIZONTAL);
         sizer->Add(btn);
 
-        //btn->Bind(wxEVT_BUTTON, [this, parent](wxCommandEvent&)
-        //{
-        //	bool system = m_presets->get_edited_preset().is_system;
-        //	bool dirty  = m_presets->get_edited_preset().is_dirty;
-        //    wxString msg_text = system ?
-        //    	_(L("A copy of the current system preset will be created, which will be detached from the system preset.")) :
-        //        _(L("The current custom preset will be detached from the parent system preset."));
-        //    if (dirty) {
-	       //     msg_text += "\n\n";
-        //    	msg_text += _(L("Modifications to the current profile will be saved."));
-        //    }
-        //    msg_text += "\n\n";
-        //    msg_text += _(L("This action is not revertible.\nDo you want to proceed?"));
+        btn->Bind(wxEVT_BUTTON, [this, parent](wxCommandEvent&)
+        {
+        	bool system = m_presets->get_edited_preset().is_system;
+        	bool dirty  = m_presets->get_edited_preset().is_dirty;
+            wxString msg_text = system ?
+            	_(L("A copy of the current system preset will be created, which will be detached from the system preset.")) :
+                _(L("The current custom preset will be detached from the parent system preset."));
+            if (dirty) {
+	            msg_text += "\n\n";
+            	msg_text += _(L("Modifications to the current profile will be saved."));
+            }
+            msg_text += "\n\n";
+            msg_text += _(L("This action is not revertible.\nDo you want to proceed?"));
 
-        //    //wxMessageDialog dialog(parent, msg_text, _(L("Detach preset")), wxICON_WARNING | wxYES_NO | wxCANCEL);
-        //    MessageDialog dialog(parent, msg_text, _(L("Detach preset")), wxICON_WARNING | wxYES_NO | wxCANCEL);
-        //    if (dialog.ShowModal() == wxID_YES)
-        //        save_preset(m_presets->get_edited_preset().is_system ? std::string() : m_presets->get_edited_preset().name, true);
-        //});
+            //wxMessageDialog dialog(parent, msg_text, _(L("Detach preset")), wxICON_WARNING | wxYES_NO | wxCANCEL);
+            MessageDialog dialog(parent, msg_text, _(L("Detach preset")), wxICON_WARNING | wxYES_NO | wxCANCEL);
+            if (dialog.ShowModal() == wxID_YES)
+                save_preset(m_presets->get_edited_preset().is_system ? std::string() : m_presets->get_edited_preset().name, true);
+        });
 
         btn->Hide();
 
@@ -1903,72 +1905,72 @@ void Tab::update_preset_description_line()
 
     wxString description_line;
 
-    //if (preset.is_default) {
-    //    description_line = _(L("This is a default preset."));
-    //} else if (preset.is_system) {
-    //    description_line = _(L("This is a system preset."));
-    //} else if (parent == nullptr) {
-    //    description_line = _(L("Current preset is inherited from the default preset."));
-    //} else {
-    //    std::string name = parent->name;
-    //    boost::replace_all(name, "&", "&&");
-    //    description_line = _(L("Current preset is inherited from")) + ":\n\t" + from_u8(name);
-    //}
+    if (preset.is_default) {
+        description_line = _(L("This is a default preset."));
+    } else if (preset.is_system) {
+        description_line = _(L("This is a system preset."));
+    } else if (parent == nullptr) {
+        description_line = _(L("Current preset is inherited from the default preset."));
+    } else {
+        std::string name = parent->name;
+        boost::replace_all(name, "&", "&&");
+        description_line = _(L("Current preset is inherited from")) + ":\n\t" + from_u8(name);
+    }
 
-    //if (preset.is_default || preset.is_system)
-    //    description_line += "\n\t" + _(L("It can't be deleted or modified.")) +
-    //                        "\n\t" + _(L("Any modifications should be saved as a new preset inherited from this one.")) +
-    //                        "\n\t" + _(L("To do that please specify a new name for the preset."));
+    if (preset.is_default || preset.is_system)
+        description_line += "\n\t" + _(L("It can't be deleted or modified.")) +
+                            "\n\t" + _(L("Any modifications should be saved as a new preset inherited from this one.")) +
+                            "\n\t" + _(L("To do that please specify a new name for the preset."));
 
-    //if (parent && parent->vendor)
-    //{
-    //    description_line += "\n\n" + _(L("Additional information:")) + "\n";
-    //    description_line += "\t" + _(L("vendor")) + ": " + (m_type == Slic3r::Preset::TYPE_PRINTER ? "\n\t\t" : "") + parent->vendor->name +
-    //                        ", ver: " + parent->vendor->config_version.to_string();
-    //    if (m_type == Slic3r::Preset::TYPE_PRINTER) {
-    //        const std::string &printer_model = preset.config.opt_string("printer_model");
-    //        if (! printer_model.empty())
-    //            description_line += "\n\n\t" + _(L("printer model")) + ": \n\t\t" + printer_model;
-    //        switch (preset.printer_technology()) {
-    //        case ptFFF:
-    //        {
-    //            //FIXME add prefered_sla_material_profile for SLA
-    //            const std::string              &default_print_profile = preset.config.opt_string("default_print_profile");
-    //            const std::vector<std::string> &default_filament_profiles = preset.config.option<ConfigOptionStrings>("default_filament_profile")->values;
-    //            if (!default_print_profile.empty())
-    //                description_line += "\n\n\t" + _(L("default print profile")) + ": \n\t\t" + default_print_profile;
-    //            if (!default_filament_profiles.empty())
-    //            {
-    //                description_line += "\n\n\t" + _(L("default filament profile")) + ": \n\t\t";
-    //                for (auto& profile : default_filament_profiles) {
-    //                    if (&profile != &*default_filament_profiles.begin())
-    //                        description_line += ", ";
-    //                    description_line += profile;
-    //                }
-    //            }
-    //            break;
-    //        }
-    //        case ptSLA:
-    //        {
-    //            //FIXME add prefered_sla_material_profile for SLA
-    //            const std::string &default_sla_material_profile = preset.config.opt_string("default_sla_material_profile");
-    //            if (!default_sla_material_profile.empty())
-    //                description_line += "\n\n\t" + _(L("default SLA material profile")) + ": \n\t\t" + default_sla_material_profile;
+    if (parent && parent->vendor)
+    {
+        description_line += "\n\n" + _(L("Additional information:")) + "\n";
+        description_line += "\t" + _(L("vendor")) + ": " + (m_type == Slic3r::Preset::TYPE_PRINTER ? "\n\t\t" : "") + parent->vendor->name +
+                            ", ver: " + parent->vendor->config_version.to_string();
+        if (m_type == Slic3r::Preset::TYPE_PRINTER) {
+            const std::string &printer_model = preset.config.opt_string("printer_model");
+            if (! printer_model.empty())
+                description_line += "\n\n\t" + _(L("printer model")) + ": \n\t\t" + printer_model;
+            switch (preset.printer_technology()) {
+            case ptFFF:
+            {
+                //FIXME add prefered_sla_material_profile for SLA
+                const std::string              &default_print_profile = preset.config.opt_string("default_print_profile");
+                const std::vector<std::string> &default_filament_profiles = preset.config.option<ConfigOptionStrings>("default_filament_profile")->values;
+                if (!default_print_profile.empty())
+                    description_line += "\n\n\t" + _(L("default print profile")) + ": \n\t\t" + default_print_profile;
+                if (!default_filament_profiles.empty())
+                {
+                    description_line += "\n\n\t" + _(L("default filament profile")) + ": \n\t\t";
+                    for (auto& profile : default_filament_profiles) {
+                        if (&profile != &*default_filament_profiles.begin())
+                            description_line += ", ";
+                        description_line += profile;
+                    }
+                }
+                break;
+            }
+            case ptSLA:
+            {
+                //FIXME add prefered_sla_material_profile for SLA
+                const std::string &default_sla_material_profile = preset.config.opt_string("default_sla_material_profile");
+                if (!default_sla_material_profile.empty())
+                    description_line += "\n\n\t" + _(L("default SLA material profile")) + ": \n\t\t" + default_sla_material_profile;
 
-    //            const std::string &default_sla_print_profile = preset.config.opt_string("default_sla_print_profile");
-    //            if (!default_sla_print_profile.empty())
-    //                description_line += "\n\n\t" + _(L("default SLA print profile")) + ": \n\t\t" + default_sla_print_profile;
-    //            break;
-    //        }
-    //        default: break;
-    //        }
-    //    }
-    //    else if (!preset.alias.empty())
-    //    {
-    //        description_line += "\n\n\t" + _(L("full profile name"))     + ": \n\t\t" + preset.name;
-    //        description_line += "\n\t"   + _(L("symbolic profile name")) + ": \n\t\t" + preset.alias;
-    //    }
-    //}
+                const std::string &default_sla_print_profile = preset.config.opt_string("default_sla_print_profile");
+                if (!default_sla_print_profile.empty())
+                    description_line += "\n\n\t" + _(L("default SLA print profile")) + ": \n\t\t" + default_sla_print_profile;
+                break;
+            }
+            default: break;
+            }
+        }
+        else if (!preset.alias.empty())
+        {
+            description_line += "\n\n\t" + _(L("full profile name"))     + ": \n\t\t" + preset.name;
+            description_line += "\n\t"   + _(L("symbolic profile name")) + ": \n\t\t" + preset.alias;
+        }
+    }
 
     m_parent_preset_description_line->SetText(description_line, false);
 
@@ -2377,20 +2379,20 @@ page = add_options_page(L("Others"), "custom-gcode_other"); // ORCA: icon only v
         option.opt.full_width = true;
         option.opt.height = 25;//250;
         optgroup->append_single_option_line(option);
-        
-#if 0
-    //page = add_options_page(L("Dependencies"), "advanced.png");
-    //    optgroup = page->new_optgroup(L("Profile dependencies"));
 
-    //    create_line_with_widget(optgroup.get(), "compatible_printers", "", [this](wxWindow* parent) {
-    //        return compatible_widget_create(parent, m_compatible_printers);
-    //    });
-    //
-    //    option = optgroup->get_option("compatible_printers_condition");
-    //    option.opt.full_width = true;
-    //    optgroup->append_single_option_line(option);
+#if 1
+    page = add_options_page(L("Dependencies"), "custom-gcode_advanced");
+        optgroup = page->new_optgroup(L("Profile dependencies"));
 
-    //    build_preset_description_line(optgroup.get());
+        create_line_with_widget(optgroup.get(), "compatible_printers", "", [this](wxWindow* parent) {
+            return compatible_widget_create(parent, m_compatible_printers);
+        });
+    
+        option = optgroup->get_option("compatible_printers_condition");
+        option.opt.full_width = true;
+        optgroup->append_single_option_line(option);
+
+        build_preset_description_line(optgroup.get());
 #endif
 }
 
@@ -2482,8 +2484,8 @@ void TabPrint::update()
     m_update_cnt--;
 
     if (m_update_cnt==0) {
-        toggle_options();
-
+        if (m_active_page && !(m_active_page->title() == "Dependencies"))
+            toggle_options();
         // update() could be called during undo/redo execution
         // Update of objectList can cause a crash in this case (because m_objects doesn't match ObjectList)
         if (m_type != Preset::TYPE_MODEL && !wxGetApp().plater()->inside_snapshot_capture())
@@ -2635,14 +2637,14 @@ void TabPrintModel::update_model_config()
                 }
                 else {
                     replace(m_all_keys.begin(), m_all_keys.end(), std::string("first_layer_print_sequence"), std::string("first_layer_sequence_choice"));
-                    m_config->set_key_value("first_layer_sequence_choice", new ConfigOptionEnum<LayerSeq>(flsCutomize));
+                    m_config->set_key_value("first_layer_sequence_choice", new ConfigOptionEnum<LayerSeq>(flsCustomize));
                 }
                 if (!plate_config.has("other_layers_print_sequence")) {
                     m_config->set_key_value("other_layers_sequence_choice", new ConfigOptionEnum<LayerSeq>(flsAuto));
                 }
                 else {
                     replace(m_all_keys.begin(), m_all_keys.end(), std::string("other_layers_print_sequence"), std::string("other_layers_sequence_choice"));
-                    m_config->set_key_value("other_layers_sequence_choice", new ConfigOptionEnum<LayerSeq>(flsCutomize));
+                    m_config->set_key_value("other_layers_sequence_choice", new ConfigOptionEnum<LayerSeq>(flsCustomize));
                 }
                 notify_changed(plate_item.first);
             }
@@ -2882,7 +2884,7 @@ void TabPrintPlate::on_value_change(const std::string& opt_key, const boost::any
                 if (first_layer_seq_choice == LayerSeq::flsAuto) {
                     plate->set_first_layer_print_sequence({});
                 }
-                else if (first_layer_seq_choice == LayerSeq::flsCutomize) {
+                else if (first_layer_seq_choice == LayerSeq::flsCustomize) {
                     const DynamicPrintConfig& plate_config = plate_item.second->get();
                     if (!plate_config.has("first_layer_print_sequence")) {
                         std::vector<int> initial_sequence;
@@ -2903,7 +2905,7 @@ void TabPrintPlate::on_value_change(const std::string& opt_key, const boost::any
                 if (other_layer_seq_choice == LayerSeq::flsAuto) {
                     plate->set_other_layers_print_sequence({});
                 }
-                else if (other_layer_seq_choice == LayerSeq::flsCutomize) {
+                else if (other_layer_seq_choice == LayerSeq::flsCustomize) {
                     const DynamicPrintConfig& plate_config = plate_item.second->get();
                     if (!plate_config.has("other_layers_print_sequence")) {
                         std::vector<int> initial_sequence;
@@ -3305,7 +3307,9 @@ void TabFilament::build()
 
         // Orca: New section to focus on flow rate and PA to declutter general section
         optgroup = page->new_optgroup(L("Flow ratio and Pressure Advance"), L"param_information");
-        optgroup->append_single_option_line("pellet_flow_coefficient", "pellet-flow-coefficient");
+        optgroup->append_single_option_line("pellet_flow_coefficient", "Pellet-modded-printer");
+        optgroup->append_single_option_line("extruder_rotation_volume", "Pellet-modded-printer");
+        optgroup->append_single_option_line("mixing_stepper_rotation_volume", "Pellet-modded-printer");
         optgroup->append_single_option_line("filament_flow_ratio");
 
         optgroup->append_single_option_line("enable_pressure_advance");
@@ -3531,26 +3535,26 @@ void TabFilament::build()
         option.opt.full_width = true;
         option.opt.height = notes_field_height;// 250;
         optgroup->append_single_option_line(option);
-#if 0
-    //page = add_options_page(L("Dependencies"), "advanced");
-    //    optgroup = page->new_optgroup(L("Profile dependencies"));
-    //    create_line_with_widget(optgroup.get(), "compatible_printers", "", [this](wxWindow* parent) {
-    //        return compatible_widget_create(parent, m_compatible_printers);
-    //    });
+#if 1
+    page = add_options_page(L("Dependencies"), "advanced");
+        optgroup = page->new_optgroup(L("Profile dependencies"));
+        create_line_with_widget(optgroup.get(), "compatible_printers", "", [this](wxWindow* parent) {
+            return compatible_widget_create(parent, m_compatible_printers);
+        });
 
-    //    option = optgroup->get_option("compatible_printers_condition");
-    //    option.opt.full_width = true;
-    //    optgroup->append_single_option_line(option);
+        option = optgroup->get_option("compatible_printers_condition");
+        option.opt.full_width = true;
+        optgroup->append_single_option_line(option);
 
-    //    create_line_with_widget(optgroup.get(), "compatible_prints", "", [this](wxWindow* parent) {
-    //        return compatible_widget_create(parent, m_compatible_prints);
-    //    });
+        create_line_with_widget(optgroup.get(), "compatible_prints", "", [this](wxWindow* parent) {
+            return compatible_widget_create(parent, m_compatible_prints);
+        });
 
-    //    option = optgroup->get_option("compatible_prints_condition");
-    //    option.opt.full_width = true;
-    //    optgroup->append_single_option_line(option);
+        option = optgroup->get_option("compatible_prints_condition");
+        option.opt.full_width = true;
+        optgroup->append_single_option_line(option);
 
-    //    build_preset_description_line(optgroup.get());
+        //build_preset_description_line(optgroup.get());
 #endif
 }
 
@@ -3637,7 +3641,17 @@ void TabFilament::toggle_options()
 
         bool support_chamber_temp_control = this->m_preset_bundle->printers.get_edited_preset().config.opt_bool("support_chamber_temp_control");
         toggle_line("chamber_temperatures", support_chamber_temp_control);
+        toggle_line("extruder_rotation_volume", is_pellet_printer);
+        toggle_line("mixing_stepper_rotation_volume", is_pellet_printer);
+        toggle_line("pellet_flow_coefficient", is_pellet_printer);
+
+        bool use_active_pellet_feeding = cfg.opt_bool("use_active_pellet_feeding");
+        toggle_line("mixing_stepper_rotation_volume", is_pellet_printer && use_active_pellet_feeding);
+
+        bool use_extruder_rotation_volume = cfg.opt_bool("use_extruder_rotation_volume");
+        toggle_line("extruder_rotation_volume", is_pellet_printer && use_extruder_rotation_volume);
     }
+
     if (m_active_page->title() == L("Setting Overrides"))
         update_filament_overrides_page(&cfg);
 
@@ -3756,7 +3770,9 @@ void TabPrinter::build_fff()
         optgroup = page->new_optgroup(L("Advanced"), L"param_advanced");
         optgroup->append_single_option_line("printer_structure");
         optgroup->append_single_option_line("gcode_flavor");
-        optgroup->append_single_option_line("pellet_modded_printer", "pellet-flow-coefficient");
+        optgroup->append_single_option_line("pellet_modded_printer", "Pellet-modded-printer");
+        optgroup->append_single_option_line("use_extruder_rotation_volume", "Pellet-modded-printer");
+        optgroup->append_single_option_line("use_active_pellet_feeding", "Pellet-modded-printer");
         optgroup->append_single_option_line("bbl_use_printhost");
         optgroup->append_single_option_line("disable_m73");
         option = optgroup->get_option("thumbnails");
@@ -3777,7 +3793,7 @@ void TabPrinter::build_fff()
                             error_str += GCodeThumbnails::get_error_string(errors);
                             InfoDialog(parent(), _L("G-code flavor is switched"), from_u8(error_str)).ShowModal();
                         }
-
+                        
                         if (!thumbnails_list.empty()) {
                             GCodeThumbnailsFormat old_format = GCodeThumbnailsFormat(m_config->option("thumbnails_format")->getInt());
                             GCodeThumbnailsFormat new_format = thumbnails_list.begin()->first;
@@ -4358,6 +4374,8 @@ if (is_marlin_flavor)
                 optgroup->append_single_option_line("long_retractions_when_cut", "", extruder_idx);
                 optgroup->append_single_option_line("retraction_distances_when_cut", "", extruder_idx);
 
+                optgroup = page->new_optgroup(L("Advanced"), L"param_advanced");
+                optgroup->append_single_option_line("active_feeder_motor_name", "Pellet-modded-printer", extruder_idx);
     #if 0
                 //optgroup = page->new_optgroup(L("Preview"), -1, true);
 
@@ -4390,8 +4408,8 @@ if (is_marlin_flavor)
                 //line.append_widget(reset_to_filament_color);
                 //optgroup->append_line(line);
     #endif
-        }
-}
+    }
+}   
     // BBS. No extra extruder page for single physical extruder machine
     // # remove extra pages
     if (m_extruders_count < m_extruders_count_old)
@@ -4512,8 +4530,14 @@ void TabPrinter::toggle_options()
             toggle_line(el, is_BBL_printer);
 
         // SoftFever: hide non-BBL settings
-        for (auto el : {"use_firmware_retraction", "use_relative_e_distances", "support_multi_bed_types", "pellet_modded_printer", "bed_mesh_max", "bed_mesh_min", "bed_mesh_probe_distance", "adaptive_bed_mesh_margin", "thumbnails"})
+        for (auto el : {"use_firmware_retraction", "use_relative_e_distances", "support_multi_bed_types", "pellet_modded_printer", "use_extruder_rotation_volume", "use_active_pellet_feeding", "bed_mesh_max", "bed_mesh_min", "bed_mesh_probe_distance", "adaptive_bed_mesh_margin", "thumbnails"})
           toggle_line(el, !is_BBL_printer);
+
+
+        bool is_pellet_printer = m_config->opt_bool("pellet_modded_printer");
+        auto gcf               = m_config->option<ConfigOptionEnum<GCodeFlavor>>("gcode_flavor")->value;
+        toggle_line("use_active_pellet_feeding", is_pellet_printer && gcf == gcfKlipper);
+        toggle_line("use_extruder_rotation_volume", is_pellet_printer && gcf == gcfKlipper);
     }
 
     if (m_active_page->title() == L("Multimaterial")) {
@@ -4611,6 +4635,12 @@ void TabPrinter::toggle_options()
         //toggle_option("retraction_distances_when_cut", m_config->opt_bool("long_retractions_when_cut",i),i);
         
         toggle_option("travel_slope", m_config->opt_enum("z_hop_types", i) != ZHopType::zhtNormal, i);
+
+        bool is_pellet_printer = m_config->opt_bool("pellet_modded_printer");
+        bool use_active_pellet_feeding = m_config->opt_bool("use_active_pellet_feeding");
+        auto gcf               = m_config->option<ConfigOptionEnum<GCodeFlavor>>("gcode_flavor")->value;
+        toggle_option("active_feeder_motor_name", is_pellet_printer && gcf == gcfKlipper && use_active_pellet_feeding, i);
+        toggle_line("active_feeder_motor_name#0", is_pellet_printer && gcf == gcfKlipper && use_active_pellet_feeding);
     }
 
     if (m_active_page->title() == L("Motion ability")) {
@@ -5115,13 +5145,12 @@ bool Tab::select_preset(std::string preset_name, bool delete_current /*=false*/,
         apply_config_from_cache();
 
         // Orca: update presets for the selected printer
-        load_current_preset();
-
         if (m_type == Preset::TYPE_PRINTER && wxGetApp().app_config->get_bool("remember_printer_config")) {
             m_preset_bundle->update_selections(*wxGetApp().app_config);
             wxGetApp().plater()->sidebar().on_filaments_change(m_preset_bundle->filament_presets.size());
         }
-        
+        load_current_preset();
+
 
         if (delete_third_printer) {
             wxGetApp().CallAfter([filament_presets, process_presets]() {
@@ -5297,7 +5326,8 @@ void Tab::activate_selected_page(std::function<void()> throw_if_canceled)
     m_active_page->activate(m_mode, throw_if_canceled);
     update_changed_ui();
     update_description_lines();
-    toggle_options();
+    if (m_active_page && !(m_active_page->title() == "Dependencies"))
+        toggle_options();
     m_active_page->update_visibility(m_mode, true); // for taggle line
 }
 
@@ -6270,8 +6300,8 @@ const ConfigOptionsGroupShp Page::get_optgroup(const wxString& title) const
 
 void TabSLAMaterial::build()
 {
-    //m_presets = &m_preset_bundle->sla_materials;
-    //load_initial_data();
+    m_presets = &m_preset_bundle->sla_materials;
+    load_initial_data();
 
     //auto page = add_options_page(L("Material"), "");
 
