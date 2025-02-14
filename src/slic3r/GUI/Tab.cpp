@@ -3808,6 +3808,7 @@ void TabPrinter::build_fff()
 
                         if (errors != enum_bitmask<ThumbnailError>()) {
                             // TRN: First argument is parameter name, the second one is the value.
+                            std::string error_str = format(_u8L("Invalid value provided for parameter %1%: %2%"), "thumbnails", val);
                             error_str += GCodeThumbnails::get_error_string(errors);
                             InfoDialog(parent(), _L("G-code flavor is switched"), from_u8(error_str)).ShowModal();
                         }
