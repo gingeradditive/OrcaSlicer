@@ -3197,10 +3197,45 @@ void GCode::_print_first_layer_extruder_temperatures(GCodeOutputStream &file, Pr
     } else {
         // Custom G-code does not set the extruder temperature. Do it now.
         if (print.config().single_extruder_multi_material.value) {
-            // Set temperature of the first printing extruder only.
-            int temp = print.config().nozzle_temperature_initial_layer.get_at(first_printing_extruder_id);
-            if (temp > 0)
-                file.write(m_writer.set_temperature(temp, wait, first_printing_extruder_id));
+            if (print.config().multi_zone.value) {
+                // Set temperature foreach zone in multi-zone mode
+                for (int zone = print.config().multi_zone_number.value; zone > 0; zone--) {
+                    std::string key = "multi_zone_" + std::to_string(zone) + "_temperature";
+                    // TODO: change this switch with something smart
+                    int temperature = 0;
+                    switch (zone) {
+                    case 1: temperature = print.config().multi_zone_1_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 2: temperature = print.config().multi_zone_2_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 3: temperature = print.config().multi_zone_3_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 4: temperature = print.config().multi_zone_4_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 5: temperature = print.config().multi_zone_5_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 6: temperature = print.config().multi_zone_6_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 7: temperature = print.config().multi_zone_7_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 8: temperature = print.config().multi_zone_8_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 9: temperature = print.config().multi_zone_9_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    case 10: temperature = print.config().multi_zone_10_initial_layer.get_at(first_printing_extruder_id);
+                        break;
+                    }
+
+                    if (temperature > 0)
+                        file.write(m_writer.set_temperature(temperature, wait, first_printing_extruder_id, zone));
+                }
+            }
+            else {
+                // Set temperature of the first printing extruder only.
+                int temp = print.config().nozzle_temperature_initial_layer.get_at(first_printing_extruder_id);
+                if (temp > 0)
+                    file.write(m_writer.set_temperature(temp, wait, first_printing_extruder_id));
+            }
         } else {
             // Set temperatures of all the printing extruders.
             for (unsigned int tool_id : print.extruders()) {
