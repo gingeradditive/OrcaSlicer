@@ -3323,7 +3323,7 @@ void TabFilament::build()
 
 
         optgroup = page->new_optgroup(L("Print temperature"), L"param_extruder_temp");
-        for (int zone = 10; zone > 0; zone--) {
+        for (int zone = 1; zone <= 10; zone++) {
             std::string zone_str = std::to_string(zone);
             line                 = {L("Zone " + zone_str), L("Zone " + zone_str + " temperature when printing")};
             line.append_option(optgroup->get_option("multi_zone_" + zone_str + "_initial_layer"));
