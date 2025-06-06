@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-16 22:32+0800\n"
+"POT-Creation-Date: 2025-06-06 09:56+0000\n"
 "PO-Revision-Date: 2024-11-03 20:59+0100\n"
 "Last-Translator: René Mošner <Renemosner@seznam.cz>\n"
 "Language-Team: \n"
@@ -188,6 +188,9 @@ msgstr "Namalováno pomocí: Filament %1%"
 msgid "Move"
 msgstr "Přesunout"
 
+msgid "Please select at least one object."
+msgstr ""
+
 msgid "Gizmo-Move"
 msgstr "Gizmo-Posuv"
 
@@ -218,14 +221,20 @@ msgstr "v"
 msgid "mm"
 msgstr "mm"
 
+msgid "Part selection"
+msgstr ""
+
+msgid "Fixed step drag"
+msgstr ""
+
+msgid "Single sided scaling"
+msgstr ""
+
 msgid "Position"
 msgstr "Pozice"
 
-#. TRN - Input label. Be short as possible
-#. Angle between Y axis and text line direction.
-#. TRN - Input label. Be short as possible
-msgid "Rotation"
-msgstr "Otáčení"
+msgid "Rotate (relative)"
+msgstr ""
 
 msgid "Scale ratios"
 msgstr "Poměry měřítka"
@@ -242,9 +251,6 @@ msgstr "Posunout"
 msgid "Group Operations"
 msgstr "Skupinové operace"
 
-msgid "Set Position"
-msgstr "Nastavení pozice"
-
 msgid "Set Orientation"
 msgstr "Změna orientace"
 
@@ -257,21 +263,27 @@ msgstr "Resetovat pozici"
 msgid "Reset Rotation"
 msgstr "Výchozí Natočení"
 
-msgid "World coordinates"
-msgstr "Světové souřadnice"
-
 msgid "Object coordinates"
 msgstr "Souřadnice objektu"
 
-msgid "°"
-msgstr "°"
+msgid "World coordinates"
+msgstr "Světové souřadnice"
+
+msgid "Reset current rotation to the value when open the rotation tool."
+msgstr ""
+
+msgid "Rotate (absolute)"
+msgstr ""
+
+msgid "Reset current rotation to real zeros."
+msgstr ""
+
+msgid "Part coordinates"
+msgstr ""
 
 #. TRN - Input label. Be short as possible
 msgid "Size"
 msgstr "Rozměr"
-
-msgid "%"
-msgstr "%"
 
 msgid "uniform scale"
 msgstr "jednotné měřítko"
@@ -335,6 +347,12 @@ msgstr "Tvar"
 #. TRN - Input label. Be short as possible
 msgid "Depth"
 msgstr "Hloubka"
+
+#. TRN - Input label. Be short as possible
+#. Angle between Y axis and text line direction.
+#. TRN - Input label. Be short as possible
+msgid "Rotation"
+msgstr "Otáčení"
 
 msgid "Groove"
 msgstr "Drážka"
@@ -595,10 +613,6 @@ msgstr "%d trojúhelníků"
 
 msgid "Show wireframe"
 msgstr "Zobrazit drátěný model"
-
-#, boost-format
-msgid "%1%"
-msgstr "%1%"
 
 msgid "Can't apply when processing preview."
 msgstr "Nelze použít při náhledu procesu."
@@ -1012,8 +1026,8 @@ msgstr ""
 
 #, boost-format
 msgid ""
-"Can't load exactly same font (\"%1%\"). Application selected a similar "
-"one (\"%2%\"). You have to specify font for enable edit text."
+"Can't load exactly same font (\"%1%\"). Application selected a similar one "
+"(\"%2%\"). You have to specify font for enable edit text."
 msgstr ""
 "Nelze načíst přesně stejné písmo(\"%1%\"). Aplikace vybrala podobné "
 "písmo(\"%2%\"). Musíte zadat písmo pro povolení editace textu."
@@ -1318,9 +1332,6 @@ msgid ""
 "Please confirm explosion ratio = 1, and please select at least one object."
 msgstr ""
 
-msgid "Please select at least one object."
-msgstr ""
-
 msgid "Edit to scale"
 msgstr "Změna rozměru"
 
@@ -1451,6 +1462,9 @@ msgstr ""
 "Konfigurační soubor \" %1% \" byl načten, ale některé hodnoty nebyly "
 "rozpoznány."
 
+msgid "Based on PrusaSlicer and BambuStudio"
+msgstr ""
+
 msgid ""
 "OrcaSlicer will terminate because of running out of memory. It may be a bug. "
 "It will be appreciated if you report the issue to our team."
@@ -1502,6 +1516,10 @@ msgstr ""
 
 msgid "WebView2 Runtime"
 msgstr "WebView2 Runtime"
+
+#, c-format, boost-format
+msgid "Resources path does not exist or is not a directory: %s"
+msgstr ""
 
 #, c-format, boost-format
 msgid ""
@@ -2087,8 +2105,8 @@ msgstr[0] "%1$d nespojitelná hrana"
 msgstr[1] "%1$d nespojitelné hrany"
 msgstr[2] "%1$d nespojitelných hran"
 
-msgid "Right click the icon to fix model object"
-msgstr "Kliknutím pravým tlačítkem na ikonu opravíte objekt modelu"
+msgid "Click the icon to repair model object"
+msgstr ""
 
 msgid "Right button click the icon to drop the object settings"
 msgstr "Kliknutím pravým tlačítkem na ikonu zrušíte nastavení objektu"
@@ -2174,8 +2192,8 @@ msgstr "Smazat všechny spojky"
 msgid "Deleting the last solid part is not allowed."
 msgstr "Smazání poslední pevné části není povoleno."
 
-msgid "The target object contains only one part and cannot be split."
-msgstr "Cílový objekt obsahuje pouze jednu část a nelze jej rozdělit."
+msgid "The target object contains only one part and can not be split."
+msgstr ""
 
 msgid "Assembly"
 msgstr "Sestavení"
@@ -2308,6 +2326,9 @@ msgstr "Auto Límec"
 
 msgid "Mouse ear"
 msgstr "Uši myši"
+
+msgid "Painted"
+msgstr ""
 
 msgid "Outer brim only"
 msgstr "Pouze vnější"
@@ -2458,12 +2479,6 @@ msgstr "Prosím, zkontrolujte síťové připojení tiskárny a Studia."
 
 msgid "Connecting..."
 msgstr "Připojuji se..."
-
-msgid "?"
-msgstr "?"
-
-msgid "/"
-msgstr "/"
 
 msgid "Empty"
 msgstr "Prázdný"
@@ -2723,6 +2738,10 @@ msgstr "Úspěšně odesláno. Automaticky přejde na stránku zařízení v %ss
 msgid "Successfully sent. Will automatically jump to the next page in %ss"
 msgstr "Úspěšně odesláno. Automaticky přejde na další stránku za %ss"
 
+#, c-format, boost-format
+msgid "Access code:%s IP address:%s"
+msgstr ""
+
 msgid "An SD card needs to be inserted before printing via LAN."
 msgstr "Před tiskem přes LAN je třeba vložit SD kartu."
 
@@ -2779,8 +2798,8 @@ msgstr "Stahování"
 msgid "Download failed"
 msgstr "Stahování se nezdařilo"
 
-msgid "Canceled"
-msgstr "Zrušeno"
+msgid "Cancelled"
+msgstr ""
 
 msgid "Installed successfully"
 msgstr "Instalace proběhla úspěšně."
@@ -3592,8 +3611,8 @@ msgid "Bed Shape"
 msgstr "Tvar Podložky"
 
 msgid ""
-"The recommended minimum temperature is less than 190°C or the "
-"recommended maximum temperature is greater than 300°C.\n"
+"The recommended minimum temperature is less than 190°C or the recommended "
+"maximum temperature is greater than 300°C.\n"
 msgstr ""
 
 msgid ""
@@ -4069,6 +4088,9 @@ msgstr "Některá přípona ve vstupu je neplatná"
 msgid "Invalid format. Expected vector format: \"%1%\""
 msgstr "Neplatný formát. Očekávaný vektorový formát: \"%1%\""
 
+msgid "Pick"
+msgstr ""
+
 msgid "Layer Height"
 msgstr "Výška vrstvy"
 
@@ -4156,17 +4178,11 @@ msgstr "nad"
 msgid "from"
 msgstr "z"
 
-msgid "Color Scheme"
-msgstr "Barevné schéma"
-
 msgid "Time"
 msgstr "Čas"
 
-msgid "Percent"
-msgstr "Procento"
-
-msgid "Used filament"
-msgstr "Použito filamentu"
+msgid "Usage"
+msgstr ""
 
 msgid "Layer Height (mm)"
 msgstr "Výška vrstvy (mm)"
@@ -4306,6 +4322,18 @@ msgstr "Zvětšit/Zmenšit oblast úprav"
 msgid "Sequence"
 msgstr "Sekvence"
 
+msgid "object selection"
+msgstr ""
+
+msgid "part selectiont"
+msgstr ""
+
+msgid "number keys"
+msgstr ""
+
+msgid "number keys can quickly change the color of objects"
+msgstr ""
+
 msgid "Mirror Object"
 msgstr "Zrcadlit Objekt"
 
@@ -4378,6 +4406,18 @@ msgstr "Zobrazení sestavy"
 msgid "Select Plate"
 msgstr "Vybrat Podložku"
 
+msgid "Slice all"
+msgstr "Slicuj Vše"
+
+msgid "Failed"
+msgstr "Selhalo"
+
+msgid "All Plates"
+msgstr ""
+
+msgid "Stats"
+msgstr ""
+
 msgid "Assembly Return"
 msgstr "Návrat k sestavení"
 
@@ -4396,6 +4436,12 @@ msgstr "Sekce Zobrazení"
 msgid "Assemble Control"
 msgstr "Ovládání sestavy"
 
+msgid "part selection"
+msgstr ""
+
+msgid "Selection Mode"
+msgstr ""
+
 msgid "Total Volume:"
 msgstr "Celkový objem:"
 
@@ -4408,7 +4454,7 @@ msgstr "Objem:"
 msgid "Size:"
 msgstr "Velikost:"
 
-#, boost-format
+#, c-format, boost-format
 msgid ""
 "Conflicts of G-code paths have been found at layer %d, z = %.2lf mm. Please "
 "separate the conflicted objects farther (%s <-> %s)."
@@ -4503,12 +4549,6 @@ msgstr ""
 msgid "Show \"Live Video\" guide page."
 msgstr "Zobrazit stránku průvodce \" Živé video \" ."
 
-msgid "720p"
-msgstr "720p"
-
-msgid "1080p"
-msgstr "1080p"
-
 msgid "Connect Printer (LAN)"
 msgstr "Připojit tiskárnu (LAN)"
 
@@ -4563,9 +4603,6 @@ msgstr "Slicuj Podložku"
 
 msgid "Print plate"
 msgstr "Tisk podložky"
-
-msgid "Slice all"
-msgstr "Slicuj Vše"
 
 msgid "Export G-code file"
 msgstr "Exportovat soubor s G-kódem"
@@ -4899,6 +4936,21 @@ msgstr "Max. průtok"
 msgid "VFA"
 msgstr "VFA"
 
+msgid "Input Shaping Frequency"
+msgstr ""
+
+msgid "Input Shaping Damping/zeta factor"
+msgstr ""
+
+msgid "Input Shaping"
+msgstr ""
+
+msgid "Junction Deviation"
+msgstr ""
+
+msgid "Junction Deviation calibration"
+msgstr ""
+
 msgid "More..."
 msgstr "Více..."
 
@@ -5171,6 +5223,11 @@ msgstr ""
 msgid "No printers."
 msgstr "Žádné tiskárny."
 
+msgid ""
+"Please check the network and try again, You can restart or update the "
+"printer if the issue persists."
+msgstr ""
+
 msgid "Loading file list..."
 msgstr "Načítání seznamu souborů..."
 
@@ -5321,9 +5378,6 @@ msgstr "Obrátit osu Rotace"
 msgid "Printing Progress"
 msgstr "Průběh tisku"
 
-msgid "0"
-msgstr "0"
-
 msgid "Layer: N/A"
 msgstr "Vrstva: N/A"
 
@@ -5368,9 +5422,6 @@ msgstr ""
 
 msgid "Print Options"
 msgstr "Možnosti tisku"
-
-msgid "100%"
-msgstr "100%"
 
 msgid "Lamp"
 msgstr "Lampa"
@@ -5844,10 +5895,6 @@ msgstr ""
 msgid "Hardened Steel"
 msgstr ""
 
-#, c-format, boost-format
-msgid "%.1f"
-msgstr ""
-
 msgid "Global"
 msgstr "Globální"
 
@@ -5996,15 +6043,15 @@ msgstr "Chcete uložit změny do \"%1%\"?"
 
 #, c-format, boost-format
 msgid ""
-"Successfully unmounted. The device %s (%s) can now be safely removed from the "
-"computer."
+"Successfully unmounted. The device %s (%s) can now be safely removed from "
+"the computer."
 msgstr ""
 "Odpojení proběhlo úspěšné. Zařízení %s(%s) lze nyní bezpečně odebrat z "
 "počítače."
 
 #, c-format, boost-format
-msgid "Ejecting of device %s(%s) has failed."
-msgstr "Vysunutí zařízení  %s(%s) se nezdařilo."
+msgid "Ejecting of device %s (%s) has failed."
+msgstr ""
 
 msgid "Previous unsaved project detected, do you want to restore it?"
 msgstr "Byly zjištěny dříve neuložené položky. Chcete je obnovit?"
@@ -6375,10 +6422,6 @@ msgstr "Otevřít jako projekt"
 msgid "Import geometry only"
 msgstr "Importovat pouze modely"
 
-msgid ""
-"This option can be changed later in preferences, under 'Load Behaviour'."
-msgstr ""
-
 msgid "Only one G-code file can be opened at the same time."
 msgstr "Najednou lze otevřít pouze jeden soubor s G-kódem."
 
@@ -6494,6 +6537,12 @@ msgstr "Optimalizovat Orientaci"
 
 msgid "Invalid number"
 msgstr "Neplatné číslo"
+
+msgid ""
+"An object is laid over the boundary of plate or exceeds the height limit.\n"
+"Please solve the problem by moving it totally on or off the plate, and "
+"confirming that the height is within the build volume."
+msgstr ""
 
 msgid "Plate Settings"
 msgstr "Nastavení Podložky"
@@ -6704,6 +6753,12 @@ msgstr ""
 msgid "If enabled, reverses the direction of zoom with mouse wheel."
 msgstr ""
 
+msgid "Orbit speed multiplier"
+msgstr ""
+
+msgid "Multiplies the orbit speed for finer or coarser camera movement."
+msgstr ""
+
 msgid "Show splash screen"
 msgstr "Zobrazovat úvodní obrazovku"
 
@@ -6735,6 +6790,13 @@ msgstr ""
 msgid ""
 "If enabled, Orca will remember and switch filament/process configuration for "
 "each printer automatically."
+msgstr ""
+
+msgid "Show the step mesh parameter setting dialog."
+msgstr ""
+
+msgid ""
+"If enabled,a parameter settings dialog will appear during STEP file import."
 msgstr ""
 
 msgid "Multi-device Management (Take effect after restarting Orca Slicer)."
@@ -7063,8 +7125,8 @@ msgstr "Poznámka: Příprava může trvat několik minut. Buďte prosím trpěl
 msgid "Publish"
 msgstr "Publikovat"
 
-msgid "Publish was canceled"
-msgstr "Publikování bylo zrušeno"
+msgid "Publish was cancelled"
+msgstr ""
 
 msgid "Slicing Plate 1"
 msgstr "Slicuj Podložku 1"
@@ -7501,11 +7563,11 @@ msgid ""
 "successes and failures of the vast number of prints by our users. We are "
 "training %s to be smarter by feeding them the real-world data. If you are "
 "willing, this service will access information from your error logs and usage "
-"logs, which may include information described in Privacy Policy. We will "
-"not collect any Personal Data by which an individual can be identified "
-"directly or indirectly, including without limitation names, addresses, "
-"payment information, or phone numbers. By enabling this service, you agree "
-"to these terms and the statement about Privacy Policy."
+"logs, which may include information described in Privacy Policy. We will not "
+"collect any Personal Data by which an individual can be identified directly "
+"or indirectly, including without limitation names, addresses, payment "
+"information, or phone numbers. By enabling this service, you agree to these "
+"terms and the statement about Privacy Policy."
 msgstr ""
 "V komunitě 3D tisku se učíme z úspěchů a neúspěchů ostatních, abychom mohli "
 "upravit naše vlastní parametry a nastavení pro slicování. %s následuje "
@@ -7574,7 +7636,7 @@ msgstr ""
 msgid ""
 "When using support material for the support interface, we recommend the "
 "following settings:\n"
-"0 top z distance, 0 interface spacing, interlaced rectilinear pattern and "
+"0 top Z distance, 0 interface spacing, interlaced rectilinear pattern and "
 "disable independent support layer height"
 msgstr ""
 
@@ -7618,8 +7680,8 @@ msgstr "Ignorovat"
 msgid ""
 "Experimental feature: Retracting and cutting off the filament at a greater "
 "distance during filament changes to minimize flush. Although it can notably "
-"reduce flush, it may also elevate the risk of nozzle clogs or other "
-"printing complications."
+"reduce flush, it may also elevate the risk of nozzle clogs or other printing "
+"complications."
 msgstr ""
 
 msgid ""
@@ -7865,6 +7927,9 @@ msgstr "Teplota v tiskové komoře"
 msgid "Print temperature"
 msgstr "Teplota tisku"
 
+msgid "Zone "
+msgstr ""
+
 msgid "Nozzle"
 msgstr "Tryska"
 
@@ -7875,7 +7940,7 @@ msgid "Cool Plate (SuperTack)"
 msgstr ""
 
 msgid ""
-"Bed temperature when the Cool Plate Supertack is installed. A value of 0 "
+"Bed temperature when the Cool Plate SuperTack is installed. A value of 0 "
 "means the filament does not support printing on the Cool Plate SuperTack."
 msgstr ""
 
@@ -7989,8 +8054,8 @@ msgstr "Parametry čistící věže"
 msgid "Tool change parameters with single extruder MM printers"
 msgstr "Parametry při výměně (Multi Material s jedním extruderem)"
 
-msgid "Ramming settings"
-msgstr "Nastavení rapidní extruze"
+msgid "Set"
+msgstr "Nastavit"
 
 msgid "Tool change parameters with multi extruder MM printers"
 msgstr "Parametry při výměně (Multi Material s více extrudery)"
@@ -7998,8 +8063,11 @@ msgstr "Parametry při výměně (Multi Material s více extrudery)"
 msgid "Dependencies"
 msgstr "Závislosti"
 
-msgid "Profile dependencies"
-msgstr "Profilové závislosti"
+msgid "Compatible printers"
+msgstr ""
+
+msgid "Compatible process profiles"
+msgstr "Kompatibilní profily procesů"
 
 msgid "Printable space"
 msgstr "Prostor pro tisk"
@@ -8101,6 +8169,10 @@ msgstr "Čistící věž"
 msgid "Single extruder multi-material parameters"
 msgstr "Parametry jednoho multimateriálového extruderu"
 
+#, c-format, boost-format
+msgid "Extruder %d"
+msgstr ""
+
 msgid ""
 "This is a single extruder multi-material printer, diameters of all extruders "
 "will be set to the new value. Do you want to proceed?"
@@ -8157,7 +8229,7 @@ msgstr[1] "Následující předvolby budou také smazány."
 msgstr[2] ""
 
 msgid ""
-"Are you sure to delete the selected preset?\n"
+"Are you sure to delete the selected preset? \n"
 "If the preset corresponds to a filament currently in use on your printer, "
 "please reset the filament information for that slot."
 msgstr ""
@@ -8168,9 +8240,6 @@ msgstr "Opravdu chcete %1% vybrané předvolby?"
 
 msgid "All"
 msgstr "Všechny"
-
-msgid "Set"
-msgstr "Nastavit"
 
 msgid "Click to reset current value and attach to the global value."
 msgstr ""
@@ -8351,6 +8420,9 @@ msgstr "Autor"
 msgid "Model Name"
 msgstr "Název modelu"
 
+msgid "Description:"
+msgstr "Popis:"
+
 #, c-format, boost-format
 msgid "%s Update"
 msgstr "%s Aktualizace"
@@ -8363,9 +8435,6 @@ msgstr "Aktualizace nastavení"
 
 msgid "A new configuration package is available. Do you want to install it?"
 msgstr "Je k dispozici nový konfigurační balíček. Chcete jej nainstalovat?"
-
-msgid "Description:"
-msgstr "Popis:"
 
 msgid "Configuration incompatible"
 msgstr "Konfigurace není kompatibilní"
@@ -8384,9 +8453,6 @@ msgstr ""
 #, c-format, boost-format
 msgid "Exit %s"
 msgstr "Ukončit %s"
-
-msgid "the Configuration package is incompatible with the current APP."
-msgstr "konfigurační balíček je nekompatibilní s aktuální aplikací."
 
 msgid "Configuration updates"
 msgstr "Aktualizace nastavení"
@@ -8617,17 +8683,17 @@ msgstr "Zvětšit zobrazení"
 msgid "Shift+A"
 msgstr "Shift+A"
 
-msgid "Shift+R"
-msgstr "Shift+R"
-
 msgid ""
-"Auto orients selected objects or all objects. If there are selected "
-"objects, it just orients the selected ones. Otherwise, it will orient "
-"all objects in the current project."
+"Auto orients selected objects or all objects. If there are selected objects, "
+"it just orients the selected ones. Otherwise, it will orient all objects in "
+"the current project."
 msgstr ""
 "Toto automaticky orientuje vybrané objekty nebo všechny objekty. Pokud jsou "
 "vybrány objekty, pouze zorientuje vybrané. Jinak zorientuje všechny objekty "
 "v aktuálním projektu."
+
+msgid "Shift+Q"
+msgstr ""
 
 msgid "Auto orients all objects on the active plate."
 msgstr ""
@@ -8731,17 +8797,17 @@ msgstr "Vybrat všechny objekty"
 msgid "Gizmo move"
 msgstr "Gizmo posuv"
 
-msgid "Gizmo scale"
-msgstr "Gizmo Měřítko"
-
 msgid "Gizmo rotate"
 msgstr "Gizmo rotace"
 
-msgid "Gizmo cut"
-msgstr "Gizmo řez"
+msgid "Gizmo scale"
+msgstr "Gizmo Měřítko"
 
 msgid "Gizmo place face on bed"
 msgstr "Gizmo umístit plochou na podložku"
+
+msgid "Gizmo cut"
+msgstr "Gizmo řez"
 
 msgid "Gizmo mesh boolean"
 msgstr "Gizmo booleovská síť"
@@ -8876,9 +8942,6 @@ msgstr ""
 
 msgid "Done"
 msgstr "Hotovo"
-
-msgid "resume"
-msgstr ""
 
 msgid "Resume Printing"
 msgstr ""
@@ -9536,6 +9599,15 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Junction deviation setting exceeds the printer's maximum value "
+"(machine_max_junction_deviation).\n"
+"Orca will automatically cap the junction deviation to ensure it doesn't "
+"surpass the printer's capabilities.\n"
+"You can adjust the machine_max_junction_deviation value in your printer's "
+"configuration to get higher limits."
+msgstr ""
+
+msgid ""
 "The acceleration setting exceeds the printer's maximum acceleration "
 "(machine_max_acceleration_extruding).\n"
 "Orca will automatically cap the acceleration speed to ensure it doesn't "
@@ -9759,13 +9831,15 @@ msgstr "Ostatní vrstvy"
 
 msgid ""
 "Bed temperature for layers except the initial one. A value of 0 means the "
+"filament does not support printing on the Cool Plate SuperTack."
+msgstr ""
+
+msgid ""
+"Bed temperature for layers except the initial one. A value of 0 means the "
 "filament does not support printing on the Cool Plate."
 msgstr ""
 "Toto je teplota podložky pro vrstvy kromě první. Hodnota 0 znamená, že "
 "filament nepodporuje tisk na Cool Podložku"
-
-msgid "°C"
-msgstr "°C"
 
 msgid ""
 "Bed temperature for layers except the initial one. A value of 0 means the "
@@ -10267,9 +10341,6 @@ msgstr ""
 "Toto ovládá generování límce na vnější a/nebo vnitřní straně modelů. Možnost "
 "Auto znamená, že šířka límce je automaticky analyzována a vypočítána."
 
-msgid "Painted"
-msgstr ""
-
 msgid "Brim-object gap"
 msgstr "Mezera mezi Límcem a Objektem"
 
@@ -10309,14 +10380,14 @@ msgstr ""
 "minimální délku odchylky pro redukci.\n"
 "0 pro deaktivaci"
 
-msgid "Compatible machine"
-msgstr "Kompatibilní stroj"
+msgid "Select printers"
+msgstr ""
 
 msgid "upward compatible machine"
 msgstr "nahoru kompatibilní stroj"
 
-msgid "Compatible machine condition"
-msgstr "Stav kompatibilního stroje"
+msgid "Condition"
+msgstr ""
 
 msgid ""
 "A boolean expression using the configuration values of an active printer "
@@ -10327,11 +10398,8 @@ msgstr ""
 "Pokud je tento logický výraz pravdivý, potom je tento profil považován za "
 "kompatibilní s aktivním profilem tiskárny."
 
-msgid "Compatible process profiles"
-msgstr "Kompatibilní profily procesů"
-
-msgid "Compatible process profiles condition"
-msgstr "Podmínka kompatibilních procesních profilů"
+msgid "Select profiles"
+msgstr ""
 
 msgid ""
 "A boolean expression using the configuration values of an active print "
@@ -10569,8 +10637,8 @@ msgid "Between Object G-code"
 msgstr ""
 
 msgid ""
-"Insert G-code between objects. This parameter will only come into effect when "
-"you print your models object by object."
+"Insert G-code between objects. This parameter will only come into effect "
+"when you print your models object by object."
 msgstr ""
 
 msgid "End G-code when finishing the printing of this filament."
@@ -10951,10 +11019,10 @@ msgstr ""
 msgid ""
 "Pressure advance value for bridges. Set to 0 to disable.\n"
 "\n"
-"A lower PA value when printing bridges helps reduce the appearance of "
-"slight under extrusion immediately after bridges. This is caused by the "
-"pressure drop in the nozzle when printing in the air and a lower PA helps "
-"counteract this."
+"A lower PA value when printing bridges helps reduce the appearance of slight "
+"under extrusion immediately after bridges. This is caused by the pressure "
+"drop in the nozzle when printing in the air and a lower PA helps counteract "
+"this."
 msgstr ""
 
 msgid ""
@@ -11007,8 +11075,10 @@ msgstr ""
 msgid "Default color"
 msgstr "Výchozí barva"
 
-msgid "Default filament color"
-msgstr "Výchozí barva filamentu"
+msgid ""
+"Default filament color\n"
+"Right click to reset value to system default."
+msgstr ""
 
 msgid "Filament notes"
 msgstr "Poznámky k filamentu"
@@ -11076,13 +11146,28 @@ msgid "Pellet flow coefficient"
 msgstr ""
 
 msgid ""
-"Pellet flow coefficient is empirically derived and allows for volume "
-"calculation for pellet printers.\n"
-"\n"
-"Internally it is converted to filament_diameter. All other volume "
-"calculations remain the same.\n"
-"\n"
-"filament_diameter = sqrt( (4 * pellet_flow_coefficient) / PI )"
+"A value representing the extrusion capacity of pellets, influenced by "
+"factors such as shape, material, and viscosity. It determines how much "
+"material is extruded per turn and is converted to an equivalent filament "
+"diameter for volumetric calculations."
+msgstr ""
+
+msgid "Extruder rotation volume"
+msgstr ""
+
+msgid ""
+"The volume of material extruded (in mm³) for each full turn of the extruder "
+"motor. This parameter is crucial for configuring precise extrusion settings "
+"during printing."
+msgstr ""
+
+msgid "Mixing stepper rotation volume"
+msgstr ""
+
+msgid ""
+"The value controlling how much material is actively fed into the extruder by "
+"the feeding mechanism. Used for fine-tuning the material flow in multi-"
+"material or pellet-based printing."
 msgstr ""
 
 msgid "Shrinkage (XY)"
@@ -11488,8 +11573,8 @@ msgid "mm/s² or %"
 msgstr "mm/s² or %"
 
 msgid ""
-"Acceleration of sparse infill. If the value is expressed as a percentage "
-"(e.g. 100%), it will be calculated based on the default acceleration."
+"Acceleration of sparse infill. If the value is expressed as a percentage (e."
+"g. 100%), it will be calculated based on the default acceleration."
 msgstr ""
 "Zrychlení vnitřní výplně. Pokud je hodnota vyjádřena v procentech (např. 100 "
 "%), bude vypočítána na základě výchozího zrychlení."
@@ -11522,6 +11607,10 @@ msgstr "accel_to_decel"
 msgid ""
 "Klipper's max_accel_to_decel will be adjusted to this %% of acceleration"
 msgstr "Klipper max_accel_to_decel bude upraven na toto %% o zrychlení"
+
+msgid ""
+"Marlin Firmware Junction Deviation (replaces the traditional XY Jerk setting)"
+msgstr ""
 
 msgid "Jerk of outer walls"
 msgstr "Jerk-Ryv na vnější stěny"
@@ -11588,6 +11677,12 @@ msgstr "Teplota trysky první vrstvy"
 
 msgid "Nozzle temperature for printing initial layer when using this filament"
 msgstr "Teplota trysky pro tisk první vrstvy při použití tohoto filamentu"
+
+msgid "Initial layer Zone "
+msgstr ""
+
+msgid "°C"
+msgstr "°C"
 
 msgid "Full fan speed at layer"
 msgstr "Maximální otáčky ventilátoru ve vrstvě"
@@ -11861,8 +11956,8 @@ msgid ""
 "unsupported).\n"
 "It won't move fan commands from custom G-code (they act as a sort of "
 "'barrier').\n"
-"It won't move fan commands into the start G-code if the 'only custom start "
-"G-code' is activated.\n"
+"It won't move fan commands into the start G-code if the 'only custom start G-"
+"code' is activated.\n"
 "Use 0 to deactivate."
 msgstr ""
 "Spustit ventilátor po tuto dobu v sekundách před cílovým časem spuštění "
@@ -11940,6 +12035,33 @@ msgid "Pellet Modded Printer"
 msgstr ""
 
 msgid "Enable this option if your printer uses pellets instead of filaments"
+msgstr ""
+
+msgid "Multi heating zone"
+msgstr ""
+
+msgid "Enable this option if your printer uses multi heating zone"
+msgstr ""
+
+msgid "Zones"
+msgstr ""
+
+msgid "Number of heating zones"
+msgstr ""
+
+msgid "Use extruder rotation volume"
+msgstr ""
+
+msgid "Enable extruder rotation volume in material settings"
+msgstr ""
+
+msgid "Active feeder motor name"
+msgstr ""
+
+msgid "Use forded pellet feeding"
+msgstr ""
+
+msgid "Enable this option if your printer has active pellet feeding"
 msgstr ""
 
 msgid "Support multi bed types"
@@ -12250,8 +12372,8 @@ msgstr ""
 msgid ""
 "Flow Compensation Model, used to adjust the flow for small infill areas. The "
 "model is expressed as a comma separated pair of values for extrusion length "
-"and flow correction factors, one per line, in the following format: "
-"\"1.234,5.678\""
+"and flow correction factor. Each pair is on a separate line, followed by a "
+"semicolon, in the following format: \"1.234, 5.678;\""
 msgstr ""
 
 msgid "Maximum speed X"
@@ -12326,6 +12448,14 @@ msgstr "Maximální Jerk-Ryv osy Z"
 msgid "Maximum jerk of the E axis"
 msgstr "Maximální Jerk-Ryv osy E"
 
+msgid "Maximum Junction Deviation"
+msgstr ""
+
+msgid ""
+"Maximum junction deviation (M205 J, only apply if  JD > 0 for Marlin "
+"Firmware)"
+msgstr ""
+
 msgid "Minimum speed for extruding"
 msgstr "Minimální rychlost pro extruzi"
 
@@ -12369,10 +12499,8 @@ msgstr "Max"
 
 msgid ""
 "The highest printable layer height for the extruder. Used to limit the "
-"maximum layer height when adaptive layer height is enabled."
+"maximum layer height when enable adaptive layer height."
 msgstr ""
-"Největší výška tisknutelné vrstvy pro extruder. Používá se k omezení "
-"maximální výšky vrstvy při povolení adaptivní výšky vrstvy"
 
 msgid "Extrusion rate smoothing"
 msgstr "Vyhlazení rychlosti extruze"
@@ -12479,10 +12607,8 @@ msgstr "Min"
 
 msgid ""
 "The lowest printable layer height for the extruder. Used to limit the "
-"minimum layer height when adaptive layer height is enabled."
+"minimum layer height when enable adaptive layer height."
 msgstr ""
-"Nejnižší výška tisknutelné vrstvy pro extruder. Používá se k omezení "
-"minimální výšky vrstvy při povolení adaptivní výšky vrstvy"
 
 msgid "Min print speed"
 msgstr "Minimální rychlost tisku"
@@ -12840,6 +12966,9 @@ msgstr ""
 msgid "Z-hop type"
 msgstr "Typ Z-hop"
 
+msgid "Type of Z-hop."
+msgstr ""
+
 msgid "Slope"
 msgstr "Sklon"
 
@@ -13034,13 +13163,13 @@ msgstr ""
 
 msgid ""
 "This option sets the printing speed for scarf joints. It is recommended to "
-"print scarf joints at a slow speed (less than 100 mm/s). It's also "
-"advisable to enable 'Extrusion rate smoothing' if the set speed varies "
-"significantly from the speed of the outer or inner walls. If the speed "
-"specified here is higher than the speed of the outer or inner walls, the "
-"printer will default to the slower of the two speeds. When specified as a "
-"percentage (e.g., 80%), the speed is calculated based on the respective "
-"outer or inner wall speed. The default value is set to 100%."
+"print scarf joints at a slow speed (less than 100 mm/s). It's also advisable "
+"to enable 'Extrusion rate smoothing' if the set speed varies significantly "
+"from the speed of the outer or inner walls. If the speed specified here is "
+"higher than the speed of the outer or inner walls, the printer will default "
+"to the slower of the two speeds. When specified as a percentage (e.g., 80%), "
+"the speed is calculated based on the respective outer or inner wall speed. "
+"The default value is set to 100%."
 msgstr ""
 
 msgid "Scarf joint flow ratio"
@@ -13088,9 +13217,10 @@ msgid "Role base wipe speed"
 msgstr "Rychlost čištění podle role"
 
 msgid ""
-"The wipe speed is determined by the speed of the current extrusion role. e.g. "
-"if a wipe action is executed immediately following an outer wall extrusion, "
-"the speed of the outer wall extrusion will be utilized for the wipe action."
+"The wipe speed is determined by the speed of the current extrusion role. e."
+"g. if a wipe action is executed immediately following an outer wall "
+"extrusion, the speed of the outer wall extrusion will be utilized for the "
+"wipe action."
 msgstr ""
 "Rychlost čištění je určena rychlostí aktuální role extruze, např. pokud je "
 "činnost čištění provedena bezprostředně po extruzi vnější stěny, rychlost "
@@ -13155,13 +13285,13 @@ msgstr "Výška obrysu"
 msgid "How many layers of skirt. Usually only one layer"
 msgstr "Kolik vrstev Obrysu. Obvykle pouze jedna vrstva"
 
-msgid "Single loop draft shield"
+msgid "Single loop after first layer"
 msgstr ""
 
 msgid ""
-"Limits the draft shield loops to one wall after the first layer. This is "
-"useful, on occasion, to conserve filament but may cause the draft shield to "
-"warp / crack."
+"Limits the skirt/draft shield loops to one wall after the first layer. This "
+"is useful, on occasion, to conserve filament but may cause the draft shield/"
+"skirt to warp / crack."
 msgstr ""
 
 msgid "Draft shield"
@@ -13333,8 +13463,8 @@ msgstr "Kolísání teploty"
 #. TRN PrintSettings : "Ooze prevention" > "Temperature variation"
 msgid ""
 "Temperature difference to be applied when an extruder is not active. The "
-"value is not used when 'idle_temperature' in filament settings is set to "
-"non-zero value."
+"value is not used when 'idle_temperature' in filament settings is set to non-"
+"zero value."
 msgstr ""
 
 msgid "Preheat time"
@@ -13351,8 +13481,8 @@ msgid "Preheat steps"
 msgstr ""
 
 msgid ""
-"Insert multiple preheat commands (e.g. M104.1). Only useful for Prusa XL. For "
-"other printers, please set it to 1."
+"Insert multiple preheat commands (e.g. M104.1). Only useful for Prusa XL. "
+"For other printers, please set it to 1."
 msgstr ""
 
 msgid "Start G-code"
@@ -13775,8 +13905,8 @@ msgid "Adaptive layer height"
 msgstr "Adaptivní výška vrstvy"
 
 msgid ""
-"Enabling this option means the height of tree support layer except the "
-"first will be automatically calculated "
+"Enabling this option means the height of tree support layer except the first "
+"will be automatically calculated "
 msgstr ""
 "Povolení této možnosti znamená, že výška stromové podpůrné vrstvy kromě "
 "první bude automaticky vypočtena "
@@ -13965,8 +14095,7 @@ msgid "Wipe Distance"
 msgstr "Vzdálenost čištění"
 
 msgid ""
-"Describe how long the nozzle will move along the last path when "
-"retracting.\n"
+"Describe how long the nozzle will move along the last path when retracting.\n"
 "\n"
 "Depending on how long the wipe operation lasts, how fast and long the "
 "extruder/filament retraction settings are, a retraction move may be needed "
@@ -14297,17 +14426,12 @@ msgstr ""
 msgid "Minimum feature size"
 msgstr "Minimální velikost prvku"
 
-#, fuzzy
 msgid ""
 "Minimum thickness of thin features. Model features that are thinner than "
-"this value will not be printed, while features thicker than this value will "
-"be widened to the minimum wall width. It's expressed as a percentage over "
-"nozzle diameter."
+"this value will not be printed, while features thicker than than this value "
+"will be widened to the minimum wall width. It's expressed as a percentage "
+"over nozzle diameter."
 msgstr ""
-"Minimální tloušťka tenkých prvků. Prvky modelu, které jsou tenčí než tato "
-"hodnota, nebudou vytištěny, zatímco prvky tlustší než minimální velikost "
-"prvku budou rozšířeny na minimální šířku stěny. Vyjadřuje se jako procento "
-"průměru trysky"
 
 msgid "Minimum wall length"
 msgstr ""
@@ -14524,6 +14648,12 @@ msgstr "Orientační možnosti: 0-vypnuto, 1-zapnuto, ostatní-auto"
 msgid "Rotation angle around the Z axis in degrees."
 msgstr "Úhel rotace kolem osy Z v stupních."
 
+msgid "Rotate around X"
+msgstr "Rotace kolem osy X"
+
+msgid "Rotation angle around the X axis in degrees."
+msgstr "Úhel rotace kolem osy X v stupních."
+
 msgid "Rotate around Y"
 msgstr "Rotace kolem osy Y"
 
@@ -14612,11 +14742,11 @@ msgid "Debug level"
 msgstr "Úroveň ladění"
 
 msgid ""
-"Sets debug logging level. 0:fatal, 1:error, 2:warning, 3:info, 4:debug, "
-"5:trace\n"
+"Sets debug logging level. 0:fatal, 1:error, 2:warning, 3:info, 4:debug, 5:"
+"trace\n"
 msgstr ""
-"Nastaví úroveň protokolování ladění. 0:fatal, 1:error, 2:warning, 3:info, "
-"4:debug, 5:sledovat\n"
+"Nastaví úroveň protokolování ladění. 0:fatal, 1:error, 2:warning, 3:info, 4:"
+"debug, 5:sledovat\n"
 
 msgid "Enable timelapse for print"
 msgstr ""
@@ -15031,21 +15161,24 @@ msgstr ""
 msgid "Support: generate contact points"
 msgstr "Podpěry: generování kontaktních bodů"
 
-msgid ""
-"Unknown file format. Input file must have .stl, .obj, .amf(.xml) extension."
-msgstr ""
-"Neznámý formát souboru. Vstupní soubor musí mít příponu .stl, .obj "
-"nebo .amf(.xml)"
-
 msgid "Loading of a model file failed."
 msgstr "Nahrávání souboru modelu selhalo."
 
 msgid "The supplied file couldn't be read because it's empty"
 msgstr "Nahraný soubor nemohl být načten, protože je prázdný"
 
+msgid ""
+"Unknown file format. Input file must have .stl, .obj, .amf(.xml) extension."
+msgstr ""
+"Neznámý formát souboru. Vstupní soubor musí mít příponu .stl, .obj nebo ."
+"amf(.xml)"
+
 msgid "Unknown file format. Input file must have .3mf or .zip.amf extension."
 msgstr ""
 "Neznámý formát souboru. Vstupní soubor musí mít příponu .3mf nebo .zip.amf."
+
+msgid "Canceled"
+msgstr "Zrušeno"
 
 msgid "load_obj: failed to parse"
 msgstr "load_obj: nepodařilo se zpracovat"
@@ -15380,9 +15513,6 @@ msgid ""
 msgstr ""
 "*Doporučujeme přidat do názvu také značku, materiál, typ a dokonce i úroveň "
 "vlhkosti"
-
-msgid "Failed"
-msgstr "Selhalo"
 
 msgid "Please enter the name you want to save to printer."
 msgstr "Zadejte název, který chcete uložit do tiskárny."
@@ -15752,6 +15882,102 @@ msgstr "Délka retrakce na konci: "
 msgid "mm/mm"
 msgstr "mm/mm"
 
+msgid "Input shaping Frequency test"
+msgstr ""
+
+msgid "Ringing Tower"
+msgstr ""
+
+msgid "Fast Tower"
+msgstr ""
+
+msgid "Test model"
+msgstr ""
+
+msgid "Start X: "
+msgstr ""
+
+msgid "End X: "
+msgstr ""
+
+msgid "Start Y: "
+msgstr ""
+
+msgid "End Y: "
+msgstr ""
+
+msgid "Frequency settings"
+msgstr ""
+
+msgid "HZ"
+msgstr ""
+
+msgid "Damp: "
+msgstr ""
+
+msgid ""
+"Recommended: Set Damp to 0.\n"
+"This will use the printer's default or the last saved value."
+msgstr ""
+
+msgid ""
+"Please input valid values\n"
+"(0 < FreqStart < FreqEnd < 500"
+msgstr ""
+
+msgid "Please input a valid damping factor (0 < Damping/zeta factor <= 1)"
+msgstr ""
+
+msgid "Input shaping Damp test"
+msgstr ""
+
+msgid "Freq X: "
+msgstr ""
+
+msgid "Freq Y: "
+msgstr ""
+
+msgid "Start damp: "
+msgstr ""
+
+msgid "End damp: "
+msgstr ""
+
+msgid "Note: Use previously calculated frequencies."
+msgstr ""
+
+msgid ""
+"Please input valid values\n"
+"(0 < Freq < 500"
+msgstr ""
+
+msgid ""
+"Please input a valid damping factor (0 <= DampingStart < DampingEnd <= 1)"
+msgstr ""
+
+msgid "Junction Deviation test"
+msgstr ""
+
+msgid "Start junction deviation: "
+msgstr ""
+
+msgid "End junction deviation: "
+msgstr ""
+
+msgid "Junction Deviation settings"
+msgstr ""
+
+msgid "Note: Lower values = sharper corners but slower speeds"
+msgstr ""
+
+msgid ""
+"Please input valid values\n"
+"(0 <= Junction Deviation < 1)"
+msgstr ""
+
+msgid "NOTE: High values may cause Layer shift"
+msgstr ""
+
 msgid "Send G-code to printer host"
 msgstr "Odeslat G-Kód do tiskového serveru"
 
@@ -16091,9 +16317,6 @@ msgstr ""
 msgid "Process Preset Template"
 msgstr ""
 
-msgid "Back Page 1"
-msgstr ""
-
 msgid ""
 "You have not yet chosen which printer preset to create based on. Please "
 "choose the vendor and model of the printer"
@@ -16231,6 +16454,13 @@ msgid ""
 "creation."
 msgstr ""
 
+#, c-format, boost-format
+msgid ""
+"The file: %s \n"
+"may have been opened by another program. \n"
+"Please close it and try again."
+msgstr ""
+
 msgid ""
 "Printer and all the filament&&process presets that belongs to the printer.\n"
 "Can be shared with others."
@@ -16298,6 +16528,12 @@ msgstr[2] ""
 msgid "Delete Preset"
 msgstr ""
 
+msgid ""
+"Are you sure to delete the selected preset?\n"
+"If the preset corresponds to a filament currently in use on your printer, "
+"please reset the filament information for that slot."
+msgstr ""
+
 msgid "Are you sure to delete the selected preset?"
 msgstr ""
 
@@ -16305,9 +16541,6 @@ msgid "Delete preset"
 msgstr "Smazat přednastavení"
 
 msgid "+ Add Preset"
-msgstr ""
-
-msgid "Delete Filament"
 msgstr ""
 
 msgid ""
@@ -16389,9 +16622,6 @@ msgstr "Úspěch!"
 
 msgid "Are you sure to log out?"
 msgstr ""
-
-msgid "Refresh Printers"
-msgstr "Obnovit tiskárny"
 
 msgid "View print host webui in Device tab"
 msgstr ""
@@ -16537,8 +16767,8 @@ msgstr "Připojení k Repetieru funguje správně."
 msgid "Could not connect to Repetier"
 msgstr "Nelze se připojit k Repetieru"
 
-msgid "Note: Repetier version 0.90.0 or higher is required."
-msgstr "Poznámka: Je vyžadována verze Repetier alespoň 0.90.0."
+msgid "Note: Repetier version 0.90.0 ir higher is required."
+msgstr ""
 
 #, boost-format
 msgid ""
@@ -16593,7 +16823,7 @@ msgstr ""
 msgid ""
 "Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
 "height. This results in almost invisible layer lines and higher print "
-"quality but shorter print time."
+"quality but longer print time."
 msgstr ""
 
 msgid ""
@@ -16605,8 +16835,8 @@ msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
-"height. This results in minimal layer lines and higher print quality, but "
-"shorter print time."
+"height. This results in minimal layer lines and higher print quality but "
+"longer print time."
 msgstr ""
 
 msgid ""
@@ -16707,19 +16937,19 @@ msgstr ""
 
 msgid ""
 "It has a very big layer height. This results in very apparent layer lines, "
-"low print quality and general print time."
+"low print quality and shorter print time."
 msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.8 mm nozzle, it has a bigger layer "
 "height. This results in very apparent layer lines and much lower print "
-"quality but shorter print time in some cases."
+"quality, but shorter print time in some cases."
 msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.8 mm nozzle, it has a much bigger "
 "layer height. This results in extremely apparent layer lines and much lower "
-"print quality but much shorter print time in some cases."
+"print quality, but much shorter print time in some cases."
 msgstr ""
 
 msgid ""
@@ -16731,7 +16961,7 @@ msgstr ""
 msgid ""
 "Compared with the default profile of a 0.8 mm nozzle, it has a smaller layer "
 "height. This results in less but still apparent layer lines and slightly "
-"higher print quality, but longer print time in some cases."
+"higher print quality but longer print time in some cases."
 msgstr ""
 
 msgid "Connected to Obico successfully!"
@@ -16755,10 +16985,10 @@ msgstr ""
 msgid "SimplyPrint account not linked. Go to Connect options to set it up."
 msgstr ""
 
-msgid "Connection to Flashforge is working correctly."
+msgid "Serial connection to Flashforge is working correctly."
 msgstr ""
 
-msgid "Could not connect to Flashforge"
+msgid "Could not connect to Flashforge via serial"
 msgstr ""
 
 msgid "The provided state is not correct."
@@ -16770,7 +17000,7 @@ msgstr ""
 msgid "Something unexpected happened when trying to log in, please try again."
 msgstr ""
 
-msgid "User canceled."
+msgid "User cancelled."
 msgstr ""
 
 msgid "Head diameter"
@@ -16797,6 +17027,9 @@ msgstr ""
 msgid "Delete a brim ear"
 msgstr ""
 
+msgid "Adjust head diameter"
+msgstr ""
+
 msgid "Adjust section view"
 msgstr ""
 
@@ -16805,7 +17038,7 @@ msgid ""
 "take effect!"
 msgstr ""
 
-msgid "Set the brim type to \"painted\""
+msgid "Set the brim type of this object to \"painted\""
 msgstr ""
 
 msgid " invalid brim ears"
@@ -17154,6 +17387,115 @@ msgid ""
 "probability of warping."
 msgstr ""
 
+#~ msgid "Set Position"
+#~ msgstr "Nastavení pozice"
+
+#~ msgid "°"
+#~ msgstr "°"
+
+#~ msgid "%"
+#~ msgstr "%"
+
+#, boost-format
+#~ msgid "%1%"
+#~ msgstr "%1%"
+
+#~ msgid "Right click the icon to fix model object"
+#~ msgstr "Kliknutím pravým tlačítkem na ikonu opravíte objekt modelu"
+
+#~ msgid "The target object contains only one part and cannot be split."
+#~ msgstr "Cílový objekt obsahuje pouze jednu část a nelze jej rozdělit."
+
+#~ msgid "?"
+#~ msgstr "?"
+
+#~ msgid "/"
+#~ msgstr "/"
+
+#~ msgid "Color Scheme"
+#~ msgstr "Barevné schéma"
+
+#~ msgid "Percent"
+#~ msgstr "Procento"
+
+#~ msgid "Used filament"
+#~ msgstr "Použito filamentu"
+
+#~ msgid "720p"
+#~ msgstr "720p"
+
+#~ msgid "1080p"
+#~ msgstr "1080p"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#, c-format, boost-format
+#~ msgid "Ejecting of device %s(%s) has failed."
+#~ msgstr "Vysunutí zařízení  %s(%s) se nezdařilo."
+
+#~ msgid "Publish was canceled"
+#~ msgstr "Publikování bylo zrušeno"
+
+#~ msgid "Ramming settings"
+#~ msgstr "Nastavení rapidní extruze"
+
+#~ msgid "Profile dependencies"
+#~ msgstr "Profilové závislosti"
+
+#~ msgid "the Configuration package is incompatible with the current APP."
+#~ msgstr "konfigurační balíček je nekompatibilní s aktuální aplikací."
+
+#~ msgid "Shift+R"
+#~ msgstr "Shift+R"
+
+#~ msgid "Compatible machine"
+#~ msgstr "Kompatibilní stroj"
+
+#~ msgid "Compatible machine condition"
+#~ msgstr "Stav kompatibilního stroje"
+
+#~ msgid "Compatible process profiles condition"
+#~ msgstr "Podmínka kompatibilních procesních profilů"
+
+#~ msgid "Default filament color"
+#~ msgstr "Výchozí barva filamentu"
+
+#~ msgid ""
+#~ "The highest printable layer height for the extruder. Used to limit the "
+#~ "maximum layer height when adaptive layer height is enabled."
+#~ msgstr ""
+#~ "Největší výška tisknutelné vrstvy pro extruder. Používá se k omezení "
+#~ "maximální výšky vrstvy při povolení adaptivní výšky vrstvy"
+
+#~ msgid ""
+#~ "The lowest printable layer height for the extruder. Used to limit the "
+#~ "minimum layer height when adaptive layer height is enabled."
+#~ msgstr ""
+#~ "Nejnižší výška tisknutelné vrstvy pro extruder. Používá se k omezení "
+#~ "minimální výšky vrstvy při povolení adaptivní výšky vrstvy"
+
+#, fuzzy
+#~ msgid ""
+#~ "Minimum thickness of thin features. Model features that are thinner than "
+#~ "this value will not be printed, while features thicker than this value "
+#~ "will be widened to the minimum wall width. It's expressed as a percentage "
+#~ "over nozzle diameter."
+#~ msgstr ""
+#~ "Minimální tloušťka tenkých prvků. Prvky modelu, které jsou tenčí než tato "
+#~ "hodnota, nebudou vytištěny, zatímco prvky tlustší než minimální velikost "
+#~ "prvku budou rozšířeny na minimální šířku stěny. Vyjadřuje se jako "
+#~ "procento průměru trysky"
+
+#~ msgid "Refresh Printers"
+#~ msgstr "Obnovit tiskárny"
+
+#~ msgid "Note: Repetier version 0.90.0 or higher is required."
+#~ msgstr "Poznámka: Je vyžadována verze Repetier alespoň 0.90.0."
+
 #~ msgid ""
 #~ "We have added an experimental style \"Tree Slim\" that features smaller "
 #~ "support volume but weaker strength.\n"
@@ -17322,7 +17664,8 @@ msgstr ""
 #~ "for the printer to process.\n"
 #~ "\n"
 #~ "Default value of 3 works well for most cases. If your printer is "
-#~ "stuttering, increase this value to reduce the number of adjustments made.\n"
+#~ "stuttering, increase this value to reduce the number of adjustments "
+#~ "made.\n"
 #~ "\n"
 #~ "Allowed values: 1-5"
 #~ msgstr ""
@@ -17630,8 +17973,7 @@ msgstr ""
 #~ msgid "Initialize failed (No Camera Device)!"
 #~ msgstr "Inicializace se nezdařila (žádné kamerové zařízení)!"
 
-#~ msgid ""
-#~ "Printer is busy downloading, please wait for the download to finish."
+#~ msgid "Printer is busy downloading, please wait for the download to finish."
 #~ msgstr ""
 #~ "Tiskárna je zaneprázdněna stahováním, počkejte prosím na dokončení "
 #~ "stahování."
@@ -17938,12 +18280,6 @@ msgstr ""
 #~ msgid "Export the objects as multiple STL."
 #~ msgstr "Exportovat objekty jako více STL souborů."
 
-#~ msgid "Rotate around X"
-#~ msgstr "Rotace kolem osy X"
-
-#~ msgid "Rotation angle around the X axis in degrees."
-#~ msgstr "Úhel rotace kolem osy X v stupních."
-
 #, boost-format
 #~ msgid "The selected preset: %1% was not found."
 #~ msgstr "Vybraná předvolba: %1% nebyla nalezena."
@@ -17984,8 +18320,8 @@ msgstr ""
 #~ "OrcaSlicer configuration file may be corrupted and is not abled to be "
 #~ "parsed. Please delete the file and try again."
 #~ msgstr ""
-#~ "Konfigurační soubor OrcaSlicer může být poškozen a nelze jej "
-#~ "analyzovat. Smažte soubor a zkuste to znovu."
+#~ "Konfigurační soubor OrcaSlicer může být poškozen a nelze jej analyzovat. "
+#~ "Smažte soubor a zkuste to znovu."
 
 #~ msgid "Online Models"
 #~ msgstr "Online modely"
@@ -18130,8 +18466,8 @@ msgstr ""
 #~ "If enabled, support loops will be generated under the contours of "
 #~ "internal bridges. These support loops could prevent internal bridges from "
 #~ "extruding over the air and improve the top surface quality, especially "
-#~ "when the sparse infill density is low. This value determines the thickness "
-#~ "of the support loops. 0 means disable this feature"
+#~ "when the sparse infill density is low. This value determines the "
+#~ "thickness of the support loops. 0 means disable this feature"
 #~ msgstr ""
 #~ "Pokud je povoleno, podpůrné smyčky budou generovány pod obrysy interních "
 #~ "mostů. Tyto podpůrné smyčky mohou zabránit extruzi materiálu do vzduchu a "

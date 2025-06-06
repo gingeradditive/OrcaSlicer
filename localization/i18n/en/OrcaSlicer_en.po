@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orca Slicer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-16 22:32+0800\n"
+"POT-Creation-Date: 2025-06-06 09:56+0000\n"
 "PO-Revision-Date: 2025-05-18 09:32-0300\n"
 "Last-Translator: Alexandre Folle de Menezes\n"
 "Language-Team: \n"
@@ -181,6 +181,9 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
+msgid "Please select at least one object."
+msgstr ""
+
 msgid "Gizmo-Move"
 msgstr ""
 
@@ -211,13 +214,19 @@ msgstr ""
 msgid "mm"
 msgstr ""
 
+msgid "Part selection"
+msgstr ""
+
+msgid "Fixed step drag"
+msgstr ""
+
+msgid "Single sided scaling"
+msgstr ""
+
 msgid "Position"
 msgstr ""
 
-#. TRN - Input label. Be short as possible
-#. Angle between Y axis and text line direction.
-#. TRN - Input label. Be short as possible
-msgid "Rotation"
+msgid "Rotate (relative)"
 msgstr ""
 
 msgid "Scale ratios"
@@ -235,9 +244,6 @@ msgstr ""
 msgid "Group Operations"
 msgstr "Group operations"
 
-msgid "Set Position"
-msgstr "Set position"
-
 msgid "Set Orientation"
 msgstr "Set orientation"
 
@@ -250,20 +256,26 @@ msgstr "Reset position"
 msgid "Reset Rotation"
 msgstr "Reset rotation"
 
-msgid "World coordinates"
-msgstr ""
-
 msgid "Object coordinates"
 msgstr ""
 
-msgid "°"
+msgid "World coordinates"
+msgstr ""
+
+msgid "Reset current rotation to the value when open the rotation tool."
+msgstr ""
+
+msgid "Rotate (absolute)"
+msgstr ""
+
+msgid "Reset current rotation to real zeros."
+msgstr ""
+
+msgid "Part coordinates"
 msgstr ""
 
 #. TRN - Input label. Be short as possible
 msgid "Size"
-msgstr ""
-
-msgid "%"
 msgstr ""
 
 msgid "uniform scale"
@@ -327,6 +339,12 @@ msgstr ""
 #. Size in emboss direction
 #. TRN - Input label. Be short as possible
 msgid "Depth"
+msgstr ""
+
+#. TRN - Input label. Be short as possible
+#. Angle between Y axis and text line direction.
+#. TRN - Input label. Be short as possible
+msgid "Rotation"
 msgstr ""
 
 msgid "Groove"
@@ -577,10 +595,6 @@ msgid "%d triangles"
 msgstr ""
 
 msgid "Show wireframe"
-msgstr ""
-
-#, boost-format
-msgid "%1%"
 msgstr ""
 
 msgid "Can't apply when processing preview."
@@ -987,8 +1001,8 @@ msgstr ""
 
 #, boost-format
 msgid ""
-"Can't load exactly same font (\"%1%\"). Application selected a similar "
-"one (\"%2%\"). You have to specify font for enable edit text."
+"Can't load exactly same font (\"%1%\"). Application selected a similar one "
+"(\"%2%\"). You have to specify font for enable edit text."
 msgstr ""
 
 msgid "No symbol"
@@ -1288,9 +1302,6 @@ msgid ""
 "Please confirm explosion ratio = 1, and please select at least one object."
 msgstr ""
 
-msgid "Please select at least one object."
-msgstr ""
-
 msgid "Edit to scale"
 msgstr ""
 
@@ -1420,6 +1431,9 @@ msgid ""
 msgstr ""
 "The configuration file “%1%” was loaded, but some values were not recognized."
 
+msgid "Based on PrusaSlicer and BambuStudio"
+msgstr ""
+
 msgid ""
 "OrcaSlicer will terminate because of running out of memory. It may be a bug. "
 "It will be appreciated if you report the issue to our team."
@@ -1463,6 +1477,10 @@ msgid ""
 msgstr ""
 
 msgid "WebView2 Runtime"
+msgstr ""
+
+#, c-format, boost-format
+msgid "Resources path does not exist or is not a directory: %s"
 msgstr ""
 
 #, c-format, boost-format
@@ -2033,7 +2051,7 @@ msgid_plural "%1$d non-manifold edges"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "Right click the icon to fix model object"
+msgid "Click the icon to repair model object"
 msgstr ""
 
 msgid "Right button click the icon to drop the object settings"
@@ -2113,7 +2131,7 @@ msgstr ""
 msgid "Deleting the last solid part is not allowed."
 msgstr ""
 
-msgid "The target object contains only one part and cannot be split."
+msgid "The target object contains only one part and can not be split."
 msgstr ""
 
 msgid "Assembly"
@@ -2241,6 +2259,9 @@ msgid "Auto Brim"
 msgstr ""
 
 msgid "Mouse ear"
+msgstr ""
+
+msgid "Painted"
 msgstr ""
 
 msgid "Outer brim only"
@@ -2391,12 +2412,6 @@ msgid "Please check the network connection of the printer and Orca."
 msgstr ""
 
 msgid "Connecting..."
-msgstr ""
-
-msgid "?"
-msgstr ""
-
-msgid "/"
 msgstr ""
 
 msgid "Empty"
@@ -2642,6 +2657,10 @@ msgstr ""
 msgid "Successfully sent. Will automatically jump to the next page in %ss"
 msgstr ""
 
+#, c-format, boost-format
+msgid "Access code:%s IP address:%s"
+msgstr ""
+
 msgid "An SD card needs to be inserted before printing via LAN."
 msgstr "A MicroSD card needs to be inserted before printing via LAN."
 
@@ -2694,7 +2713,7 @@ msgstr ""
 msgid "Download failed"
 msgstr ""
 
-msgid "Canceled"
+msgid "Cancelled"
 msgstr ""
 
 msgid "Installed successfully"
@@ -3467,8 +3486,8 @@ msgid "Bed Shape"
 msgstr ""
 
 msgid ""
-"The recommended minimum temperature is less than 190°C or the "
-"recommended maximum temperature is greater than 300°C.\n"
+"The recommended minimum temperature is less than 190°C or the recommended "
+"maximum temperature is greater than 300°C.\n"
 msgstr ""
 
 msgid ""
@@ -3909,6 +3928,9 @@ msgstr ""
 msgid "Invalid format. Expected vector format: \"%1%\""
 msgstr ""
 
+msgid "Pick"
+msgstr ""
+
 msgid "Layer Height"
 msgstr ""
 
@@ -3996,16 +4018,10 @@ msgstr ""
 msgid "from"
 msgstr ""
 
-msgid "Color Scheme"
-msgstr "Color scheme"
-
 msgid "Time"
 msgstr ""
 
-msgid "Percent"
-msgstr ""
-
-msgid "Used filament"
+msgid "Usage"
 msgstr ""
 
 msgid "Layer Height (mm)"
@@ -4146,6 +4162,18 @@ msgstr ""
 msgid "Sequence"
 msgstr ""
 
+msgid "object selection"
+msgstr ""
+
+msgid "part selectiont"
+msgstr ""
+
+msgid "number keys"
+msgstr ""
+
+msgid "number keys can quickly change the color of objects"
+msgstr ""
+
 msgid "Mirror Object"
 msgstr "Mirror object"
 
@@ -4218,6 +4246,18 @@ msgstr ""
 msgid "Select Plate"
 msgstr ""
 
+msgid "Slice all"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "All Plates"
+msgstr ""
+
+msgid "Stats"
+msgstr ""
+
 msgid "Assembly Return"
 msgstr ""
 
@@ -4236,6 +4276,12 @@ msgstr ""
 msgid "Assemble Control"
 msgstr "Assembly Control"
 
+msgid "part selection"
+msgstr ""
+
+msgid "Selection Mode"
+msgstr ""
+
 msgid "Total Volume:"
 msgstr ""
 
@@ -4248,7 +4294,7 @@ msgstr ""
 msgid "Size:"
 msgstr ""
 
-#, boost-format
+#, c-format, boost-format
 msgid ""
 "Conflicts of G-code paths have been found at layer %d, z = %.2lf mm. Please "
 "separate the conflicted objects farther (%s <-> %s)."
@@ -4335,12 +4381,6 @@ msgstr ""
 msgid "Show \"Live Video\" guide page."
 msgstr ""
 
-msgid "720p"
-msgstr ""
-
-msgid "1080p"
-msgstr ""
-
 msgid "Connect Printer (LAN)"
 msgstr ""
 
@@ -4394,9 +4434,6 @@ msgid "Slice plate"
 msgstr ""
 
 msgid "Print plate"
-msgstr ""
-
-msgid "Slice all"
 msgstr ""
 
 msgid "Export G-code file"
@@ -4731,6 +4768,21 @@ msgstr ""
 msgid "VFA"
 msgstr ""
 
+msgid "Input Shaping Frequency"
+msgstr ""
+
+msgid "Input Shaping Damping/zeta factor"
+msgstr ""
+
+msgid "Input Shaping"
+msgstr ""
+
+msgid "Junction Deviation"
+msgstr ""
+
+msgid "Junction Deviation calibration"
+msgstr ""
+
 msgid "More..."
 msgstr ""
 
@@ -4990,6 +5042,11 @@ msgstr ""
 msgid "No printers."
 msgstr ""
 
+msgid ""
+"Please check the network and try again, You can restart or update the "
+"printer if the issue persists."
+msgstr ""
+
 msgid "Loading file list..."
 msgstr ""
 
@@ -5137,9 +5194,6 @@ msgstr ""
 msgid "Printing Progress"
 msgstr "Printing progress"
 
-msgid "0"
-msgstr ""
-
 msgid "Layer: N/A"
 msgstr ""
 
@@ -5183,9 +5237,6 @@ msgid "Printer Parts"
 msgstr ""
 
 msgid "Print Options"
-msgstr ""
-
-msgid "100%"
 msgstr ""
 
 msgid "Lamp"
@@ -5642,10 +5693,6 @@ msgstr ""
 msgid "Hardened Steel"
 msgstr ""
 
-#, c-format, boost-format
-msgid "%.1f"
-msgstr ""
-
 msgid "Global"
 msgstr ""
 
@@ -5786,8 +5833,8 @@ msgstr ""
 
 #, c-format, boost-format
 msgid ""
-"Successfully unmounted. The device %s (%s) can now be safely removed from the "
-"computer."
+"Successfully unmounted. The device %s (%s) can now be safely removed from "
+"the computer."
 msgstr ""
 
 #, c-format, boost-format
@@ -6144,10 +6191,6 @@ msgstr ""
 msgid "Import geometry only"
 msgstr ""
 
-msgid ""
-"This option can be changed later in preferences, under 'Load Behaviour'."
-msgstr ""
-
 msgid "Only one G-code file can be opened at the same time."
 msgstr "Only one G-code file can be opened at a time."
 
@@ -6256,6 +6299,12 @@ msgid "Optimize Rotation"
 msgstr ""
 
 msgid "Invalid number"
+msgstr ""
+
+msgid ""
+"An object is laid over the boundary of plate or exceeds the height limit.\n"
+"Please solve the problem by moving it totally on or off the plate, and "
+"confirming that the height is within the build volume."
 msgstr ""
 
 msgid "Plate Settings"
@@ -6460,6 +6509,12 @@ msgstr ""
 msgid "If enabled, reverses the direction of zoom with mouse wheel."
 msgstr ""
 
+msgid "Orbit speed multiplier"
+msgstr ""
+
+msgid "Multiplies the orbit speed for finer or coarser camera movement."
+msgstr ""
+
 msgid "Show splash screen"
 msgstr ""
 
@@ -6491,6 +6546,13 @@ msgstr ""
 msgid ""
 "If enabled, Orca will remember and switch filament/process configuration for "
 "each printer automatically."
+msgstr ""
+
+msgid "Show the step mesh parameter setting dialog."
+msgstr ""
+
+msgid ""
+"If enabled,a parameter settings dialog will appear during STEP file import."
 msgstr ""
 
 msgid "Multi-device Management (Take effect after restarting Orca Slicer)."
@@ -6819,7 +6881,7 @@ msgstr ""
 msgid "Publish"
 msgstr ""
 
-msgid "Publish was canceled"
+msgid "Publish was cancelled"
 msgstr ""
 
 msgid "Slicing Plate 1"
@@ -7232,11 +7294,11 @@ msgid ""
 "successes and failures of the vast number of prints by our users. We are "
 "training %s to be smarter by feeding them the real-world data. If you are "
 "willing, this service will access information from your error logs and usage "
-"logs, which may include information described in Privacy Policy. We will "
-"not collect any Personal Data by which an individual can be identified "
-"directly or indirectly, including without limitation names, addresses, "
-"payment information, or phone numbers. By enabling this service, you agree "
-"to these terms and the statement about Privacy Policy."
+"logs, which may include information described in Privacy Policy. We will not "
+"collect any Personal Data by which an individual can be identified directly "
+"or indirectly, including without limitation names, addresses, payment "
+"information, or phone numbers. By enabling this service, you agree to these "
+"terms and the statement about Privacy Policy."
 msgstr ""
 
 msgid "Statement on User Experience Improvement Plan"
@@ -7339,8 +7401,8 @@ msgstr ""
 msgid ""
 "Experimental feature: Retracting and cutting off the filament at a greater "
 "distance during filament changes to minimize flush. Although it can notably "
-"reduce flush, it may also elevate the risk of nozzle clogs or other "
-"printing complications."
+"reduce flush, it may also elevate the risk of nozzle clogs or other printing "
+"complications."
 msgstr ""
 
 msgid ""
@@ -7567,6 +7629,9 @@ msgstr ""
 msgid "Print temperature"
 msgstr ""
 
+msgid "Zone "
+msgstr ""
+
 msgid "Nozzle"
 msgstr ""
 
@@ -7577,12 +7642,9 @@ msgid "Cool Plate (SuperTack)"
 msgstr ""
 
 msgid ""
-"Bed temperature when the Cool Plate Supertack is installed. A value of 0 "
+"Bed temperature when the Cool Plate SuperTack is installed. A value of 0 "
 "means the filament does not support printing on the Cool Plate SuperTack."
 msgstr ""
-"This is the bed temperature when the Cool Plate Supertack is installed. A "
-"value of 0 means the filament does not support printing on the Cool Plate "
-"SuperTack."
 
 msgid "Cool Plate"
 msgstr ""
@@ -7635,8 +7697,8 @@ msgid ""
 "the filament does not support printing on the Textured PEI Plate."
 msgstr ""
 "This is the bed temperature when the Textured PEI Plate is installed. A "
-"value of 0 means the filament does not support printing on the Textured "
-"PEI Plate."
+"value of 0 means the filament does not support printing on the Textured PEI "
+"Plate."
 
 msgid "Volumetric speed limitation"
 msgstr ""
@@ -7698,7 +7760,7 @@ msgstr ""
 msgid "Tool change parameters with single extruder MM printers"
 msgstr ""
 
-msgid "Ramming settings"
+msgid "Set"
 msgstr ""
 
 msgid "Tool change parameters with multi extruder MM printers"
@@ -7707,7 +7769,10 @@ msgstr ""
 msgid "Dependencies"
 msgstr ""
 
-msgid "Profile dependencies"
+msgid "Compatible printers"
+msgstr ""
+
+msgid "Compatible process profiles"
 msgstr ""
 
 msgid "Printable space"
@@ -7806,6 +7871,10 @@ msgstr ""
 msgid "Single extruder multi-material parameters"
 msgstr ""
 
+#, c-format, boost-format
+msgid "Extruder %d"
+msgstr ""
+
 msgid ""
 "This is a single extruder multi-material printer, diameters of all extruders "
 "will be set to the new value. Do you want to proceed?"
@@ -7860,7 +7929,7 @@ msgstr[0] "The following preset will be deleted too:"
 msgstr[1] "The following presets will be deleted too:"
 
 msgid ""
-"Are you sure to delete the selected preset?\n"
+"Are you sure to delete the selected preset? \n"
 "If the preset corresponds to a filament currently in use on your printer, "
 "please reset the filament information for that slot."
 msgstr ""
@@ -7870,9 +7939,6 @@ msgid "Are you sure to %1% the selected preset?"
 msgstr "Are you sure you want to %1% the selected preset?"
 
 msgid "All"
-msgstr ""
-
-msgid "Set"
 msgstr ""
 
 msgid "Click to reset current value and attach to the global value."
@@ -8042,6 +8108,9 @@ msgstr ""
 msgid "Model Name"
 msgstr ""
 
+msgid "Description:"
+msgstr ""
+
 #, c-format, boost-format
 msgid "%s Update"
 msgstr ""
@@ -8053,9 +8122,6 @@ msgid "Configuration update"
 msgstr ""
 
 msgid "A new configuration package is available. Do you want to install it?"
-msgstr ""
-
-msgid "Description:"
 msgstr ""
 
 msgid "Configuration incompatible"
@@ -8073,11 +8139,6 @@ msgstr ""
 #, c-format, boost-format
 msgid "Exit %s"
 msgstr ""
-
-msgid "the Configuration package is incompatible with the current APP."
-msgstr ""
-"The configuration package is incompatible with the current version of Bambu "
-"Studio."
 
 msgid "Configuration updates"
 msgstr ""
@@ -8297,13 +8358,13 @@ msgstr ""
 msgid "Shift+A"
 msgstr ""
 
-msgid "Shift+R"
+msgid ""
+"Auto orients selected objects or all objects. If there are selected objects, "
+"it just orients the selected ones. Otherwise, it will orient all objects in "
+"the current project."
 msgstr ""
 
-msgid ""
-"Auto orients selected objects or all objects. If there are selected "
-"objects, it just orients the selected ones. Otherwise, it will orient "
-"all objects in the current project."
+msgid "Shift+Q"
 msgstr ""
 
 msgid "Auto orients all objects on the active plate."
@@ -8408,16 +8469,16 @@ msgstr ""
 msgid "Gizmo move"
 msgstr ""
 
-msgid "Gizmo scale"
-msgstr ""
-
 msgid "Gizmo rotate"
 msgstr ""
 
-msgid "Gizmo cut"
+msgid "Gizmo scale"
 msgstr ""
 
 msgid "Gizmo place face on bed"
+msgstr ""
+
+msgid "Gizmo cut"
 msgstr ""
 
 msgid "Gizmo mesh boolean"
@@ -8551,9 +8612,6 @@ msgid "Skip this Version"
 msgstr ""
 
 msgid "Done"
-msgstr ""
-
-msgid "resume"
 msgstr ""
 
 msgid "Resume Printing"
@@ -9173,6 +9231,15 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Junction deviation setting exceeds the printer's maximum value "
+"(machine_max_junction_deviation).\n"
+"Orca will automatically cap the junction deviation to ensure it doesn't "
+"surpass the printer's capabilities.\n"
+"You can adjust the machine_max_junction_deviation value in your printer's "
+"configuration to get higher limits."
+msgstr ""
+
+msgid ""
 "The acceleration setting exceeds the printer's maximum acceleration "
 "(machine_max_acceleration_extruding).\n"
 "Orca will automatically cap the acceleration speed to ensure it doesn't "
@@ -9380,13 +9447,15 @@ msgstr ""
 
 msgid ""
 "Bed temperature for layers except the initial one. A value of 0 means the "
+"filament does not support printing on the Cool Plate SuperTack."
+msgstr ""
+
+msgid ""
+"Bed temperature for layers except the initial one. A value of 0 means the "
 "filament does not support printing on the Cool Plate."
 msgstr ""
 "This is the bed temperature for layers except for the first one. A value of "
 "0 means the filament does not support printing on the Cool Plate."
-
-msgid "°C"
-msgstr ""
 
 msgid ""
 "Bed temperature for layers except the initial one. A value of 0 means the "
@@ -9877,9 +9946,6 @@ msgid ""
 "models. Auto means the brim width is analyzed and calculated automatically."
 msgstr ""
 
-msgid "Painted"
-msgstr ""
-
 msgid "Brim-object gap"
 msgstr ""
 
@@ -9914,13 +9980,13 @@ msgid ""
 "0 to deactivate"
 msgstr ""
 
-msgid "Compatible machine"
+msgid "Select printers"
 msgstr ""
 
 msgid "upward compatible machine"
 msgstr ""
 
-msgid "Compatible machine condition"
+msgid "Condition"
 msgstr ""
 
 msgid ""
@@ -9932,10 +9998,7 @@ msgstr ""
 "profile. If this expression evaluates to true, this profile is considered "
 "compatible with the active printer profile."
 
-msgid "Compatible process profiles"
-msgstr ""
-
-msgid "Compatible process profiles condition"
+msgid "Select profiles"
 msgstr ""
 
 msgid ""
@@ -10173,8 +10236,8 @@ msgid "Between Object G-code"
 msgstr ""
 
 msgid ""
-"Insert G-code between objects. This parameter will only come into effect when "
-"you print your models object by object."
+"Insert G-code between objects. This parameter will only come into effect "
+"when you print your models object by object."
 msgstr ""
 
 msgid "End G-code when finishing the printing of this filament."
@@ -10540,10 +10603,10 @@ msgstr ""
 msgid ""
 "Pressure advance value for bridges. Set to 0 to disable.\n"
 "\n"
-"A lower PA value when printing bridges helps reduce the appearance of "
-"slight under extrusion immediately after bridges. This is caused by the "
-"pressure drop in the nozzle when printing in the air and a lower PA helps "
-"counteract this."
+"A lower PA value when printing bridges helps reduce the appearance of slight "
+"under extrusion immediately after bridges. This is caused by the pressure "
+"drop in the nozzle when printing in the air and a lower PA helps counteract "
+"this."
 msgstr ""
 
 msgid ""
@@ -10594,7 +10657,9 @@ msgstr ""
 msgid "Default color"
 msgstr ""
 
-msgid "Default filament color"
+msgid ""
+"Default filament color\n"
+"Right click to reset value to system default."
 msgstr ""
 
 msgid "Filament notes"
@@ -10663,13 +10728,28 @@ msgid "Pellet flow coefficient"
 msgstr ""
 
 msgid ""
-"Pellet flow coefficient is empirically derived and allows for volume "
-"calculation for pellet printers.\n"
-"\n"
-"Internally it is converted to filament_diameter. All other volume "
-"calculations remain the same.\n"
-"\n"
-"filament_diameter = sqrt( (4 * pellet_flow_coefficient) / PI )"
+"A value representing the extrusion capacity of pellets, influenced by "
+"factors such as shape, material, and viscosity. It determines how much "
+"material is extruded per turn and is converted to an equivalent filament "
+"diameter for volumetric calculations."
+msgstr ""
+
+msgid "Extruder rotation volume"
+msgstr ""
+
+msgid ""
+"The volume of material extruded (in mm³) for each full turn of the extruder "
+"motor. This parameter is crucial for configuring precise extrusion settings "
+"during printing."
+msgstr ""
+
+msgid "Mixing stepper rotation volume"
+msgstr ""
+
+msgid ""
+"The value controlling how much material is actively fed into the extruder by "
+"the feeding mechanism. Used for fine-tuning the material flow in multi-"
+"material or pellet-based printing."
 msgstr ""
 
 msgid "Shrinkage (XY)"
@@ -11029,8 +11109,8 @@ msgid "mm/s² or %"
 msgstr ""
 
 msgid ""
-"Acceleration of sparse infill. If the value is expressed as a percentage "
-"(e.g. 100%), it will be calculated based on the default acceleration."
+"Acceleration of sparse infill. If the value is expressed as a percentage (e."
+"g. 100%), it will be calculated based on the default acceleration."
 msgstr ""
 
 msgid ""
@@ -11058,6 +11138,10 @@ msgstr ""
 #, c-format, boost-format
 msgid ""
 "Klipper's max_accel_to_decel will be adjusted to this %% of acceleration"
+msgstr ""
+
+msgid ""
+"Marlin Firmware Junction Deviation (replaces the traditional XY Jerk setting)"
 msgstr ""
 
 msgid "Jerk of outer walls"
@@ -11123,6 +11207,12 @@ msgstr "First layer nozzle temperature"
 
 msgid "Nozzle temperature for printing initial layer when using this filament"
 msgstr "Nozzle temperature for printing the first layer with this filament"
+
+msgid "Initial layer Zone "
+msgstr ""
+
+msgid "°C"
+msgstr ""
 
 msgid "Full fan speed at layer"
 msgstr ""
@@ -11386,8 +11476,8 @@ msgid ""
 "unsupported).\n"
 "It won't move fan commands from custom G-code (they act as a sort of "
 "'barrier').\n"
-"It won't move fan commands into the start G-code if the 'only custom start "
-"G-code' is activated.\n"
+"It won't move fan commands into the start G-code if the 'only custom start G-"
+"code' is activated.\n"
 "Use 0 to deactivate."
 msgstr ""
 
@@ -11446,6 +11536,33 @@ msgid "Pellet Modded Printer"
 msgstr ""
 
 msgid "Enable this option if your printer uses pellets instead of filaments"
+msgstr ""
+
+msgid "Multi heating zone"
+msgstr ""
+
+msgid "Enable this option if your printer uses multi heating zone"
+msgstr ""
+
+msgid "Zones"
+msgstr ""
+
+msgid "Number of heating zones"
+msgstr ""
+
+msgid "Use extruder rotation volume"
+msgstr ""
+
+msgid "Enable extruder rotation volume in material settings"
+msgstr ""
+
+msgid "Active feeder motor name"
+msgstr ""
+
+msgid "Use forded pellet feeding"
+msgstr ""
+
+msgid "Enable this option if your printer has active pellet feeding"
 msgstr ""
 
 msgid "Support multi bed types"
@@ -11524,9 +11641,9 @@ msgid ""
 "material resulting in rough top surfaces."
 msgstr ""
 "This allows the infill area to be enlarged slightly to overlap with walls "
-"for better bonding. The percentage value is relative to line width of "
-"sparse infill. Set this value to ~10-15% to minimize potential over "
-"extrusion and accumulation of material resulting in rough top surfaces."
+"for better bonding. The percentage value is relative to line width of sparse "
+"infill. Set this value to ~10-15% to minimize potential over extrusion and "
+"accumulation of material resulting in rough top surfaces."
 
 msgid "Top/Bottom solid infill/wall overlap"
 msgstr ""
@@ -11731,8 +11848,8 @@ msgstr ""
 msgid ""
 "Flow Compensation Model, used to adjust the flow for small infill areas. The "
 "model is expressed as a comma separated pair of values for extrusion length "
-"and flow correction factors, one per line, in the following format: "
-"\"1.234,5.678\""
+"and flow correction factor. Each pair is on a separate line, followed by a "
+"semicolon, in the following format: \"1.234, 5.678;\""
 msgstr ""
 
 msgid "Maximum speed X"
@@ -11807,6 +11924,14 @@ msgstr ""
 msgid "Maximum jerk of the E axis"
 msgstr ""
 
+msgid "Maximum Junction Deviation"
+msgstr ""
+
+msgid ""
+"Maximum junction deviation (M205 J, only apply if  JD > 0 for Marlin "
+"Firmware)"
+msgstr ""
+
 msgid "Minimum speed for extruding"
 msgstr ""
 
@@ -11849,10 +11974,8 @@ msgstr ""
 
 msgid ""
 "The highest printable layer height for the extruder. Used to limit the "
-"maximum layer height when adaptive layer height is enabled."
+"maximum layer height when enable adaptive layer height."
 msgstr ""
-"The highest printable layer height for the extruder. This is used to limit "
-"the maximum layer height when adaptive layer height is enabled."
 
 msgid "Extrusion rate smoothing"
 msgstr ""
@@ -11873,8 +11996,8 @@ msgid ""
 "Voron) this value is usually not needed. However it can provide some "
 "marginal benefit in certain cases where feature speeds vary greatly. For "
 "example, when there are aggressive slowdowns due to overhangs. In these "
-"cases a high value of around 300-350mm3/s2 is recommended as this allows "
-"for just enough smoothing to assist pressure advance achieve a smoother flow "
+"cases a high value of around 300-350mm3/s2 is recommended as this allows for "
+"just enough smoothing to assist pressure advance achieve a smoother flow "
 "transition.\n"
 "\n"
 "For slower printers without pressure advance, the value should be set much "
@@ -11929,10 +12052,8 @@ msgstr ""
 
 msgid ""
 "The lowest printable layer height for the extruder. Used to limit the "
-"minimum layer height when adaptive layer height is enabled."
+"minimum layer height when enable adaptive layer height."
 msgstr ""
-"The lowest printable layer height for the extruder. This is used to limit "
-"the minimum layer height when adaptive layer height is enabled."
 
 msgid "Min print speed"
 msgstr ""
@@ -12261,6 +12382,9 @@ msgstr ""
 msgid "Z-hop type"
 msgstr ""
 
+msgid "Type of Z-hop."
+msgstr ""
+
 msgid "Slope"
 msgstr ""
 
@@ -12436,13 +12560,13 @@ msgstr ""
 
 msgid ""
 "This option sets the printing speed for scarf joints. It is recommended to "
-"print scarf joints at a slow speed (less than 100 mm/s). It's also "
-"advisable to enable 'Extrusion rate smoothing' if the set speed varies "
-"significantly from the speed of the outer or inner walls. If the speed "
-"specified here is higher than the speed of the outer or inner walls, the "
-"printer will default to the slower of the two speeds. When specified as a "
-"percentage (e.g., 80%), the speed is calculated based on the respective "
-"outer or inner wall speed. The default value is set to 100%."
+"print scarf joints at a slow speed (less than 100 mm/s). It's also advisable "
+"to enable 'Extrusion rate smoothing' if the set speed varies significantly "
+"from the speed of the outer or inner walls. If the speed specified here is "
+"higher than the speed of the outer or inner walls, the printer will default "
+"to the slower of the two speeds. When specified as a percentage (e.g., 80%), "
+"the speed is calculated based on the respective outer or inner wall speed. "
+"The default value is set to 100%."
 msgstr ""
 
 msgid "Scarf joint flow ratio"
@@ -12490,9 +12614,10 @@ msgid "Role base wipe speed"
 msgstr ""
 
 msgid ""
-"The wipe speed is determined by the speed of the current extrusion role. e.g. "
-"if a wipe action is executed immediately following an outer wall extrusion, "
-"the speed of the outer wall extrusion will be utilized for the wipe action."
+"The wipe speed is determined by the speed of the current extrusion role. e."
+"g. if a wipe action is executed immediately following an outer wall "
+"extrusion, the speed of the outer wall extrusion will be utilized for the "
+"wipe action."
 msgstr ""
 
 msgid "Wipe on loops"
@@ -12548,13 +12673,13 @@ msgstr ""
 msgid "How many layers of skirt. Usually only one layer"
 msgstr "Number of skirt layers: usually only one"
 
-msgid "Single loop draft shield"
+msgid "Single loop after first layer"
 msgstr ""
 
 msgid ""
-"Limits the draft shield loops to one wall after the first layer. This is "
-"useful, on occasion, to conserve filament but may cause the draft shield to "
-"warp / crack."
+"Limits the skirt/draft shield loops to one wall after the first layer. This "
+"is useful, on occasion, to conserve filament but may cause the draft shield/"
+"skirt to warp / crack."
 msgstr ""
 
 msgid "Draft shield"
@@ -12701,8 +12826,8 @@ msgid ""
 "timelapse video when printing completes. If smooth mode is selected, the "
 "toolhead will move to the excess chute after each layer is printed and then "
 "take a snapshot. Since the melt filament may leak from the nozzle during the "
-"process of taking a snapshot, prime tower is required for smooth mode to wipe "
-"nozzle."
+"process of taking a snapshot, prime tower is required for smooth mode to "
+"wipe nozzle."
 msgstr ""
 "If smooth or traditional mode is selected, a timelapse video will be "
 "generated for each print. After each layer is printed, a snapshot is taken "
@@ -12722,8 +12847,8 @@ msgstr ""
 #. TRN PrintSettings : "Ooze prevention" > "Temperature variation"
 msgid ""
 "Temperature difference to be applied when an extruder is not active. The "
-"value is not used when 'idle_temperature' in filament settings is set to "
-"non-zero value."
+"value is not used when 'idle_temperature' in filament settings is set to non-"
+"zero value."
 msgstr ""
 
 msgid "Preheat time"
@@ -12740,8 +12865,8 @@ msgid "Preheat steps"
 msgstr ""
 
 msgid ""
-"Insert multiple preheat commands (e.g. M104.1). Only useful for Prusa XL. For "
-"other printers, please set it to 1."
+"Insert multiple preheat commands (e.g. M104.1). Only useful for Prusa XL. "
+"For other printers, please set it to 1."
 msgstr ""
 
 msgid "Start G-code"
@@ -13119,8 +13244,8 @@ msgid "Adaptive layer height"
 msgstr ""
 
 msgid ""
-"Enabling this option means the height of tree support layer except the "
-"first will be automatically calculated "
+"Enabling this option means the height of tree support layer except the first "
+"will be automatically calculated "
 msgstr ""
 
 msgid "Auto brim width"
@@ -13298,8 +13423,7 @@ msgid "Wipe Distance"
 msgstr "Wipe distance"
 
 msgid ""
-"Describe how long the nozzle will move along the last path when "
-"retracting.\n"
+"Describe how long the nozzle will move along the last path when retracting.\n"
 "\n"
 "Depending on how long the wipe operation lasts, how fast and long the "
 "extruder/filament retraction settings are, a retraction move may be needed "
@@ -13593,9 +13717,9 @@ msgstr ""
 
 msgid ""
 "Minimum thickness of thin features. Model features that are thinner than "
-"this value will not be printed, while features thicker than this value will "
-"be widened to the minimum wall width. It's expressed as a percentage over "
-"nozzle diameter."
+"this value will not be printed, while features thicker than than this value "
+"will be widened to the minimum wall width. It's expressed as a percentage "
+"over nozzle diameter."
 msgstr ""
 
 msgid "Minimum wall length"
@@ -13798,6 +13922,12 @@ msgstr ""
 msgid "Rotation angle around the Z axis in degrees."
 msgstr ""
 
+msgid "Rotate around X"
+msgstr ""
+
+msgid "Rotation angle around the X axis in degrees."
+msgstr ""
+
 msgid "Rotate around Y"
 msgstr ""
 
@@ -13884,8 +14014,8 @@ msgid "Debug level"
 msgstr ""
 
 msgid ""
-"Sets debug logging level. 0:fatal, 1:error, 2:warning, 3:info, 4:debug, "
-"5:trace\n"
+"Sets debug logging level. 0:fatal, 1:error, 2:warning, 3:info, 4:debug, 5:"
+"trace\n"
 msgstr ""
 
 msgid "Enable timelapse for print"
@@ -14274,20 +14404,23 @@ msgstr ""
 msgid "Support: generate contact points"
 msgstr ""
 
-msgid ""
-"Unknown file format. Input file must have .stl, .obj, .amf(.xml) extension."
-msgstr ""
-"Unknown file format: input file must have .stl, .obj, or .amf(.xml) "
-"extension."
-
 msgid "Loading of a model file failed."
 msgstr "Loading of model file failed."
 
 msgid "The supplied file couldn't be read because it's empty"
 msgstr "The supplied file couldn't be read because it's empty."
 
+msgid ""
+"Unknown file format. Input file must have .stl, .obj, .amf(.xml) extension."
+msgstr ""
+"Unknown file format: input file must have .stl, .obj, or .amf(.xml) "
+"extension."
+
 msgid "Unknown file format. Input file must have .3mf or .zip.amf extension."
 msgstr "Unknown file format: input file must have .3mf or .zip.amf extension."
+
+msgid "Canceled"
+msgstr ""
 
 msgid "load_obj: failed to parse"
 msgstr ""
@@ -14590,9 +14723,6 @@ msgstr ""
 msgid ""
 "*We recommend you to add brand, materia, type, and even humidity level in "
 "the Name"
-msgstr ""
-
-msgid "Failed"
 msgstr ""
 
 msgid "Please enter the name you want to save to printer."
@@ -14941,6 +15071,102 @@ msgstr ""
 msgid "mm/mm"
 msgstr ""
 
+msgid "Input shaping Frequency test"
+msgstr ""
+
+msgid "Ringing Tower"
+msgstr ""
+
+msgid "Fast Tower"
+msgstr ""
+
+msgid "Test model"
+msgstr ""
+
+msgid "Start X: "
+msgstr ""
+
+msgid "End X: "
+msgstr ""
+
+msgid "Start Y: "
+msgstr ""
+
+msgid "End Y: "
+msgstr ""
+
+msgid "Frequency settings"
+msgstr ""
+
+msgid "HZ"
+msgstr ""
+
+msgid "Damp: "
+msgstr ""
+
+msgid ""
+"Recommended: Set Damp to 0.\n"
+"This will use the printer's default or the last saved value."
+msgstr ""
+
+msgid ""
+"Please input valid values\n"
+"(0 < FreqStart < FreqEnd < 500"
+msgstr ""
+
+msgid "Please input a valid damping factor (0 < Damping/zeta factor <= 1)"
+msgstr ""
+
+msgid "Input shaping Damp test"
+msgstr ""
+
+msgid "Freq X: "
+msgstr ""
+
+msgid "Freq Y: "
+msgstr ""
+
+msgid "Start damp: "
+msgstr ""
+
+msgid "End damp: "
+msgstr ""
+
+msgid "Note: Use previously calculated frequencies."
+msgstr ""
+
+msgid ""
+"Please input valid values\n"
+"(0 < Freq < 500"
+msgstr ""
+
+msgid ""
+"Please input a valid damping factor (0 <= DampingStart < DampingEnd <= 1)"
+msgstr ""
+
+msgid "Junction Deviation test"
+msgstr ""
+
+msgid "Start junction deviation: "
+msgstr ""
+
+msgid "End junction deviation: "
+msgstr ""
+
+msgid "Junction Deviation settings"
+msgstr ""
+
+msgid "Note: Lower values = sharper corners but slower speeds"
+msgstr ""
+
+msgid ""
+"Please input valid values\n"
+"(0 <= Junction Deviation < 1)"
+msgstr ""
+
+msgid "NOTE: High values may cause Layer shift"
+msgstr ""
+
 msgid "Send G-code to printer host"
 msgstr ""
 
@@ -15285,9 +15511,6 @@ msgstr ""
 msgid "Process Preset Template"
 msgstr ""
 
-msgid "Back Page 1"
-msgstr ""
-
 msgid ""
 "You have not yet chosen which printer preset to create based on. Please "
 "choose the vendor and model of the printer"
@@ -15446,6 +15669,13 @@ msgstr ""
 "If not, a time suffix will be added, and you can modify the name after "
 "creation."
 
+#, c-format, boost-format
+msgid ""
+"The file: %s \n"
+"may have been opened by another program. \n"
+"Please close it and try again."
+msgstr ""
+
 msgid ""
 "Printer and all the filament&&process presets that belongs to the printer.\n"
 "Can be shared with others."
@@ -15514,6 +15744,12 @@ msgstr[1] ""
 msgid "Delete Preset"
 msgstr ""
 
+msgid ""
+"Are you sure to delete the selected preset?\n"
+"If the preset corresponds to a filament currently in use on your printer, "
+"please reset the filament information for that slot."
+msgstr ""
+
 msgid "Are you sure to delete the selected preset?"
 msgstr ""
 
@@ -15521,9 +15757,6 @@ msgid "Delete preset"
 msgstr ""
 
 msgid "+ Add Preset"
-msgstr ""
-
-msgid "Delete Filament"
 msgstr ""
 
 msgid ""
@@ -15605,9 +15838,6 @@ msgid "Success!"
 msgstr ""
 
 msgid "Are you sure to log out?"
-msgstr ""
-
-msgid "Refresh Printers"
 msgstr ""
 
 msgid "View print host webui in Device tab"
@@ -15743,7 +15973,7 @@ msgstr ""
 msgid "Could not connect to Repetier"
 msgstr ""
 
-msgid "Note: Repetier version 0.90.0 or higher is required."
+msgid "Note: Repetier version 0.90.0 ir higher is required."
 msgstr ""
 
 #, boost-format
@@ -15791,11 +16021,8 @@ msgstr ""
 msgid ""
 "Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
 "height. This results in almost invisible layer lines and higher print "
-"quality but shorter print time."
-msgstr ""
-"Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
-"height. This results in almost invisible layer lines and higher print "
 "quality but longer print time."
+msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
@@ -15807,11 +16034,8 @@ msgstr ""
 msgid ""
 "Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
 "height. This results in minimal layer lines and higher print quality but "
-"shorter print time."
-msgstr ""
-"Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
-"height. This results in minimal layer lines and higher print quality but "
 "longer print time."
+msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.2 mm nozzle, it has a smaller layer "
@@ -15911,21 +16135,19 @@ msgstr ""
 
 msgid ""
 "It has a very big layer height. This results in very apparent layer lines, "
-"low print quality and general print time."
-msgstr ""
-"It has a very big layer height. This results in very apparent layer lines, "
 "low print quality and shorter print time."
+msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.8 mm nozzle, it has a bigger layer "
 "height. This results in very apparent layer lines and much lower print "
-"quality but shorter print time in some cases."
+"quality, but shorter print time in some cases."
 msgstr ""
 
 msgid ""
 "Compared with the default profile of a 0.8 mm nozzle, it has a much bigger "
 "layer height. This results in extremely apparent layer lines and much lower "
-"print quality but much shorter print time in some cases."
+"print quality, but much shorter print time in some cases."
 msgstr ""
 
 msgid ""
@@ -15961,10 +16183,10 @@ msgstr ""
 msgid "SimplyPrint account not linked. Go to Connect options to set it up."
 msgstr ""
 
-msgid "Connection to Flashforge is working correctly."
+msgid "Serial connection to Flashforge is working correctly."
 msgstr ""
 
-msgid "Could not connect to Flashforge"
+msgid "Could not connect to Flashforge via serial"
 msgstr ""
 
 msgid "The provided state is not correct."
@@ -15976,7 +16198,7 @@ msgstr ""
 msgid "Something unexpected happened when trying to log in, please try again."
 msgstr ""
 
-msgid "User canceled."
+msgid "User cancelled."
 msgstr ""
 
 msgid "Head diameter"
@@ -16003,6 +16225,9 @@ msgstr ""
 msgid "Delete a brim ear"
 msgstr ""
 
+msgid "Adjust head diameter"
+msgstr ""
+
 msgid "Adjust section view"
 msgstr ""
 
@@ -16011,7 +16236,7 @@ msgid ""
 "take effect!"
 msgstr ""
 
-msgid "Set the brim type to \"painted\""
+msgid "Set the brim type of this object to \"painted\""
 msgstr ""
 
 msgid " invalid brim ears"
@@ -16320,6 +16545,64 @@ msgstr ""
 "ABS, appropriately increasing the heatbed temperature can reduce the "
 "probability of warping?"
 
+#~ msgid "Set Position"
+#~ msgstr "Set position"
+
+#~ msgid "Color Scheme"
+#~ msgstr "Color scheme"
+
+#~ msgid ""
+#~ "Bed temperature when the Cool Plate Supertack is installed. A value of 0 "
+#~ "means the filament does not support printing on the Cool Plate SuperTack."
+#~ msgstr ""
+#~ "This is the bed temperature when the Cool Plate Supertack is installed. A "
+#~ "value of 0 means the filament does not support printing on the Cool Plate "
+#~ "SuperTack."
+
+#~ msgid "the Configuration package is incompatible with the current APP."
+#~ msgstr ""
+#~ "The configuration package is incompatible with the current version of "
+#~ "Bambu Studio."
+
+#~ msgid ""
+#~ "The highest printable layer height for the extruder. Used to limit the "
+#~ "maximum layer height when adaptive layer height is enabled."
+#~ msgstr ""
+#~ "The highest printable layer height for the extruder. This is used to "
+#~ "limit the maximum layer height when adaptive layer height is enabled."
+
+#~ msgid ""
+#~ "The lowest printable layer height for the extruder. Used to limit the "
+#~ "minimum layer height when adaptive layer height is enabled."
+#~ msgstr ""
+#~ "The lowest printable layer height for the extruder. This is used to limit "
+#~ "the minimum layer height when adaptive layer height is enabled."
+
+#~ msgid ""
+#~ "Compared with the default profile of a 0.2 mm nozzle, it has a smaller "
+#~ "layer height. This results in almost invisible layer lines and higher "
+#~ "print quality but shorter print time."
+#~ msgstr ""
+#~ "Compared with the default profile of a 0.2 mm nozzle, it has a smaller "
+#~ "layer height. This results in almost invisible layer lines and higher "
+#~ "print quality but longer print time."
+
+#~ msgid ""
+#~ "Compared with the default profile of a 0.2 mm nozzle, it has a smaller "
+#~ "layer height. This results in minimal layer lines and higher print "
+#~ "quality but shorter print time."
+#~ msgstr ""
+#~ "Compared with the default profile of a 0.2 mm nozzle, it has a smaller "
+#~ "layer height. This results in minimal layer lines and higher print "
+#~ "quality but longer print time."
+
+#~ msgid ""
+#~ "It has a very big layer height. This results in very apparent layer "
+#~ "lines, low print quality and general print time."
+#~ msgstr ""
+#~ "It has a very big layer height. This results in very apparent layer "
+#~ "lines, low print quality and shorter print time."
+
 #, c-format, boost-format
 #~ msgid "Connect failed [%d]!"
 #~ msgstr "Connection failed [%d]!"
@@ -16496,8 +16779,7 @@ msgstr ""
 #~ msgid "Initialize failed (No Camera Device)!"
 #~ msgstr "Initialization failed (No Camera Device)!"
 
-#~ msgid ""
-#~ "Printer is busy downloading, please wait for the download to finish."
+#~ msgid "Printer is busy downloading, please wait for the download to finish."
 #~ msgstr ""
 #~ "Printer is busy downloading; please wait for the download to finish."
 
