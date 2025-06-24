@@ -18,7 +18,7 @@
   ],
   "printable_height": "270",
   "nozzle_type": "undefine",
-  "auxiliary_fan": "0",
+  "auxiliary_fan": "1",
   "machine_max_acceleration_e": [
     "10000",
     "10000"
