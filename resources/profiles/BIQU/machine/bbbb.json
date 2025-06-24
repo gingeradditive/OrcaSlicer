@@ -1,0 +1,8 @@
+{
+  "from": "system",
+  "type": "machine",
+  "instantiation": "true",
+  "version": "0.0.0.0",
+  "inherits": "aaaa",
+  "name": "bbbb"
+}
