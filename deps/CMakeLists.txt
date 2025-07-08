@@ -34,7 +34,7 @@ if(POLICY CMP0135) # DOWNLOAD_EXTRACT_TIMESTAMP
     cmake_policy(SET CMP0135 NEW)
 endif()
 
-project(OrcaSlicer-deps)
+project(GingerSlicer-deps)
 
 include(ExternalProject)
 include(ProcessorCount)
@@ -87,9 +87,9 @@ endif ()
 # Slic3r compiles with a different version which will cause runtime errors.
 # option(DEP_BUILD_IGL_STATIC "Build IGL as a static library. Might cause link errors and increase binary size." OFF)
 
-message(STATUS "OrcaSlicer deps DESTDIR: ${DESTDIR}")
-message(STATUS "OrcaSlicer download dir for source packages: ${DEP_DOWNLOAD_DIR}")
-message(STATUS "OrcaSlicer deps debug build: ${DEP_DEBUG}")
+message(STATUS "GingerSlicer deps DESTDIR: ${DESTDIR}")
+message(STATUS "GingerSlicer download dir for source packages: ${DEP_DOWNLOAD_DIR}")
+message(STATUS "GingerSlicer deps debug build: ${DEP_DEBUG}")
 
 find_package(Git REQUIRED)
 
@@ -148,7 +148,7 @@ elseif(FLATPAK)
     # the only reason this is here is because of the HACK at the bottom for ci
     #
     # note for future devs: shared libs may actually create a size reduction
-    # but orcaslicer_deps tends to get really funny regarding linking after that (notably boost)
+    # but GingerSlicer_deps tends to get really funny regarding linking after that (notably boost)
     # so, as much as I would like to use that, it's not happening
     ExternalProject_Add(
         dep_${projectname}

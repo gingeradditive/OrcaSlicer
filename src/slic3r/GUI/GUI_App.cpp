@@ -744,7 +744,7 @@ static void generic_exception_handle()
         // and terminate the app so it is at least certain to happen now.
         BOOST_LOG_TRIVIAL(error) << boost::format("std::bad_alloc exception: %1%") % ex.what();
         flush_logs();
-        wxString errmsg = wxString::Format(_L("OrcaSlicer will terminate because of running out of memory. "
+        wxString errmsg = wxString::Format(_L("GingerSlicer will terminate because of running out of memory. "
                                               "It may be a bug. It will be appreciated if you report the issue to our team."));
         wxMessageBox(errmsg + "\n\n" + wxString(ex.what()), _L("Fatal error"), wxOK | wxICON_ERROR);
 
@@ -753,13 +753,13 @@ static void generic_exception_handle()
      } catch (const boost::io::bad_format_string& ex) {
      	BOOST_LOG_TRIVIAL(error) << boost::format("Uncaught exception: %1%") % ex.what();
         	flush_logs();
-        wxString errmsg = _L("OrcaSlicer will terminate because of a localization error. "
+        wxString errmsg = _L("GingerSlicer will terminate because of a localization error. "
                              "It will be appreciated if you report the specific scenario this issue happened.");
         wxMessageBox(errmsg + "\n\n" + wxString(ex.what()), _L("Critical error"), wxOK | wxICON_ERROR);
         std::terminate();
         //throw;
     } catch (const std::exception& ex) {
-        wxLogError(format_wxstr(_L("OrcaSlicer got an unhandled exception: %1%"), ex.what()));
+        wxLogError(format_wxstr(_L("GingerSlicer got an unhandled exception: %1%"), ex.what()));
         BOOST_LOG_TRIVIAL(error) << boost::format("Uncaught exception: %1%") % ex.what();
         flush_logs();
         throw;
@@ -1947,7 +1947,7 @@ void GUI_App::init_webview_runtime()
 {
     // Check WebView Runtime
     if (!WebView::CheckWebViewRuntime()) {
-        int nRet = wxMessageBox(_L("Orca Slicer requires the Microsoft WebView2 Runtime to operate certain features.\nClick Yes to install it now."),
+        int nRet = wxMessageBox(_L("Ginger Slicer requires the Microsoft WebView2 Runtime to operate certain features.\nClick Yes to install it now."),
                                 _L("WebView2 Runtime"), wxYES_NO);
         if (nRet == wxYES) {
             WebView::DownloadAndInstallWebViewRuntime();
@@ -2295,7 +2295,7 @@ bool GUI_App::on_init_inner()
     }
 #endif
 
-    BOOST_LOG_TRIVIAL(info) << boost::format("gui mode, Current OrcaSlicer Version %1%")%SoftFever_VERSION;
+    BOOST_LOG_TRIVIAL(info) << boost::format("gui mode, Current GingerSlicer Version %1%")%SoftFever_VERSION;
 
 #if defined(__WINDOWS__)
     HMODULE hKernel32 = GetModuleHandleW(L"kernel32.dll");
@@ -2473,7 +2473,7 @@ bool GUI_App::on_init_inner()
                /* wxString tips = wxString::Format(_L("Click to download new version in default browser: %s"), version_info.version_str);
                 DownloadDialog dialog(this->mainframe,
                     tips,
-                    _L("New version of Orca Slicer"),
+                    _L("New version of Ginger Slicer"),
                     false,
                     wxCENTER | wxICON_INFORMATION);
 
@@ -2520,7 +2520,7 @@ bool GUI_App::on_init_inner()
                 wxString tips = wxString::Format(_L("Click to download new version in default browser: %s"), version_str);
                 DownloadDialog dialog(this->mainframe,
                     tips,
-                    _L("The Orca Slicer needs an upgrade"),
+                    _L("The Ginger Slicer needs an upgrade"),
                     false,
                     wxCENTER | wxICON_INFORMATION);
                 dialog.SetExtendedMessage(description_text);
@@ -2636,7 +2636,7 @@ bool GUI_App::on_init_inner()
 
     sidebar().obj_list()->init();
     //sidebar().aux_list()->init_auxiliary();
-    mainframe->m_project->init_auxiliary();
+    //mainframe->m_project->init_auxiliary();
 
 //     update_mode(); // !!! do that later
     SetTopWindow(mainframe);
@@ -2757,7 +2757,7 @@ bool GUI_App::on_init_inner()
         m_config_corrupted = false;
         show_error(nullptr,
                    _u8L(
-                       "The OrcaSlicer configuration file may be corrupted and cannot be parsed.\nOrcaSlicer has attempted to recreate the "
+                       "The GingerSlicer configuration file may be corrupted and cannot be parsed.\nGingerSlicer has attempted to recreate the "
                        "configuration file.\nPlease note, application settings will be lost, but printer profiles will not be affected."));
     }
     return true;
@@ -3123,7 +3123,7 @@ void GUI_App::UpdateDarkUI(wxWindow* window, bool highlited/* = false*/, bool ju
         auto orig_col = window->GetBackgroundColour();
         auto bg_col = StateColor::darkModeColorFor(orig_col);
         // there are cases where the background color of an item is bright, specifically:
-        // * the background color of a button: #009688  -- 73
+        // * the background color of a button: #d72828  -- 73
         if (bg_col != orig_col) {
             window->SetBackgroundColour(bg_col);
         }
@@ -4154,7 +4154,7 @@ void GUI_App::on_http_error(wxCommandEvent &evt)
 
     // Version limit
     if (code == HttpErrorVersionLimited) {
-        MessageDialog msg_dlg(nullptr, _L("The version of Orca Slicer is too low and needs to be updated to the latest version before it can be used normally."), "", wxAPPLY | wxOK);
+        MessageDialog msg_dlg(nullptr, _L("The version of Ginger Slicer is too low and needs to be updated to the latest version before it can be used normally."), "", wxAPPLY | wxOK);
         if (msg_dlg.ShowModal() == wxOK) {
         }
 
@@ -5186,7 +5186,7 @@ bool GUI_App::load_language(wxString language, bool initial)
     	// Get the active language from PrusaSlicer.ini, or empty string if the key does not exist.
         language = app_config->get("language");
         if (! language.empty())
-        	BOOST_LOG_TRIVIAL(info) << boost::format("language provided by OrcaSlicer.conf: %1%") % language;
+        	BOOST_LOG_TRIVIAL(info) << boost::format("language provided by GingerSlicer.conf: %1%") % language;
         else {
             // Get the system language.
             const wxLanguage lang_system = wxLanguage(wxLocale::GetSystemLanguage());
@@ -5243,7 +5243,7 @@ bool GUI_App::load_language(wxString language, bool initial)
 	}
 
 	if (language_info != nullptr && language_info->LayoutDirection == wxLayout_RightToLeft) {
-    	BOOST_LOG_TRIVIAL(trace) << boost::format("The following language code requires right to left layout, which is not supported by OrcaSlicer: %1%") % language_info->CanonicalName.ToUTF8().data();
+    	BOOST_LOG_TRIVIAL(trace) << boost::format("The following language code requires right to left layout, which is not supported by GingerSlicer: %1%") % language_info->CanonicalName.ToUTF8().data();
 		language_info = nullptr;
 	}
 
@@ -5328,14 +5328,14 @@ bool GUI_App::load_language(wxString language, bool initial)
 
     if (! wxLocale::IsAvailable(language_info->Language)) {
     	// Loading the language dictionary failed.
-    	wxString message = "Switching Orca Slicer to language " + language_info->CanonicalName + " failed.";
+    	wxString message = "Switching Ginger Slicer to language " + language_info->CanonicalName + " failed.";
 #if !defined(_WIN32) && !defined(__APPLE__)
         // likely some linux system
         message += "\nYou may need to reconfigure the missing locales, likely by running the \"locale-gen\" and \"dpkg-reconfigure locales\" commands.\n";
 #endif
         if (initial)
         	message + "\n\nApplication will close.";
-        wxMessageBox(message, "Orca Slicer - Switching language failed", wxOK | wxICON_ERROR);
+        wxMessageBox(message, "Ginger Slicer - Switching language failed", wxOK | wxICON_ERROR);
         if (initial)
 			std::exit(EXIT_FAILURE);
 		else

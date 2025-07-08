@@ -146,9 +146,9 @@ wxString CopyrightsDialog::get_html_text()
                 "<font size=\"3\">",
          bgr_clr_str, text_clr_str, text_clr_str,
         _L("License"),
-        _L("Orca Slicer is licensed under "),
+        _L("Ginger Slicer is licensed under "),
         "https://www.gnu.org/licenses/agpl-3.0.html",_L("GNU Affero General Public License, version 3"),
-        _L("Orca Slicer is based on PrusaSlicer and BambuStudio"),
+        _L("Ginger Slicer is based on PrusaSlicer and BambuStudio"),
         _L("Libraries"),
         _L("This software uses open source components whose copyright and other proprietary rights belong to their respective owners"));
 
@@ -242,7 +242,7 @@ AboutDialog::AboutDialog()
         // _build_string_font.SetStyle(wxFONTSTYLE_ITALIC);
 
         vesizer->Add(0, 0, 1, wxEXPAND, FromDIP(5));
-        auto          version_string = std::string(SoftFever_VERSION); // _L("Orca Slicer ") + " " + std::string(SoftFever_VERSION);
+        auto          version_string = std::string(SoftFever_VERSION); // _L("Ginger Slicer ") + " " + std::string(SoftFever_VERSION);
         wxStaticText* version = new wxStaticText(this, wxID_ANY, version_string.c_str(), wxDefaultPosition, wxDefaultSize);
         wxStaticText* credits_string = new wxStaticText(this, wxID_ANY, wxString::Format("Build %s", std::string(GIT_COMMIT_HASH)), wxDefaultPosition, wxDefaultSize);
         credits_string->SetFont(_build_string_font);
@@ -270,7 +270,8 @@ AboutDialog::AboutDialog()
     text_sizer_horiz->Add( 0, 0, 0, wxLEFT, FromDIP(20));
 
     std::vector<wxString> text_list;
-    text_list.push_back(_L("OrcaSlicer is based on BambuStudio, PrusaSlicer, and SuperSlicer."));
+    text_list.push_back(_L("GingerSlicer is based on Orcaslicer, BambuStudio, PrusaSlicer, and SuperSlicer."));
+    text_list.push_back(_L("GingerSlicer is originally based on Orcaslicer by SoftFever."));
     text_list.push_back(_L("BambuStudio is originally based on PrusaSlicer by PrusaResearch."));
     text_list.push_back(_L("PrusaSlicer is originally based on Slic3r by Alessandro Ranellucci."));
     text_list.push_back(_L("Slic3r was created by Alessandro Ranellucci with the help of many other contributors."));
@@ -346,9 +347,9 @@ AboutDialog::AboutDialog()
                          std::pair<wxColour, int>(wxColour(238, 238, 238), StateColor::Hovered), std::pair<wxColour, int>(wxColour(255, 255, 255), StateColor::Enabled),
                          std::pair<wxColour, int>(wxColour(255, 255, 255), StateColor::Normal));
     button_portions->SetBackgroundColor(report_bg);
-    StateColor report_bd(std::pair<wxColour, int>(wxColour(144, 144, 144), StateColor::Disabled), std::pair<wxColour, int>(wxColour(38, 46, 48), StateColor::Enabled));
+    StateColor report_bd(std::pair<wxColour, int>(wxColour(144, 144, 144), StateColor::Disabled), std::pair<wxColour, int>(wxColour(48, 38, 38), StateColor::Enabled));
     button_portions->SetBorderColor(report_bd);
-    StateColor report_text(std::pair<wxColour, int>(wxColour(144, 144, 144), StateColor::Disabled), std::pair<wxColour, int>(wxColour(38, 46, 48), StateColor::Enabled));
+    StateColor report_text(std::pair<wxColour, int>(wxColour(144, 144, 144), StateColor::Disabled), std::pair<wxColour, int>(wxColour(48, 38, 38), StateColor::Enabled));
     button_portions->SetTextColor(report_text);
     button_portions->SetFont(Label::Body_12);
     button_portions->SetCornerRadius(FromDIP(12));
