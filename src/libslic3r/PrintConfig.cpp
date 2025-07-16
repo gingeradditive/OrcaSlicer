@@ -5306,12 +5306,14 @@ void PrintConfigDef::init_fff_params()
     def->label = L("Adaptive layer height");
     def->category = L("Quality");
     def->tooltip = L("Enabling this option means the height of tree support layer except the first will be automatically calculated.");
+    def->mode     = comAdvanced;
     def->set_default_value(new ConfigOptionBool(1));
     
     def = this->add("tree_support_auto_brim", coBool);
     def->label = L("Auto brim width");
     def->category = L("Quality");
     def->tooltip = L("Enabling this option means the width of the brim for tree support will be automatically calculated.");
+    def->mode     = comAdvanced;    
     def->set_default_value(new ConfigOptionBool(1));
     
     def = this->add("tree_support_brim_width", coFloat);
@@ -5319,6 +5321,7 @@ void PrintConfigDef::init_fff_params()
     def->category = L("Quality");
     def->min      = 0.0;
     def->tooltip = L("Distance from tree branch to the outermost brim line.");
+    def->mode     = comAdvanced;
     def->set_default_value(new ConfigOptionFloat(3));
 
     def = this->add("tree_support_tip_diameter", coFloat);
@@ -5653,7 +5656,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("The volume of material to prime extruder on tower.");
     def->sidetext = "mm³";	// cubic milimeters, don't need translation
     def->min = 1.0;
-    def->mode = comSimple;
+    def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionFloat(45.));
 
     def = this->add("wipe_tower_x", coFloats);
@@ -5677,7 +5680,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("Width of the prime tower.");
     def->sidetext = "mm";	// milimeters, don't need translation
     def->min = 2.0;
-    def->mode = comSimple;
+    def->mode     = comAdvanced;
     def->set_default_value(new ConfigOptionFloat(60.));
 
     def = this->add("wipe_tower_rotation_angle", coFloat);
@@ -5800,6 +5803,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("This object will be used to purge the nozzle after a filament change to save filament and decrease the print time. "
         "Colors of the objects will be mixed as a result. "
         "It will not take effect unless the prime tower is enabled.");
+    def->mode     = comAdvanced;
     def->set_default_value(new ConfigOptionBool(false));
 
     def = this->add("wipe_tower_bridging", coFloat);
