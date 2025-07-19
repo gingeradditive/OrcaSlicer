@@ -30,5 +30,6 @@
     "travel_acceleration": "1500",
     "travel_jerk": "3",
     "version": "2.3.0.3",
-    "wipe_speed": "8"
+    "wipe_speed": "8",
+    "instantiation": "true"
 }
