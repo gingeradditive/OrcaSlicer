@@ -1,0 +1,21 @@
+{
+    "bundle_id": "offline_Ginger G1 3.0 nozzle - V2_20250716130711",
+    "bundle_type": "printer config bundle",
+    "filament_config": [
+        "filament/Azure PETG.json",
+        "filament/Azure PLA.json",
+        "filament/FormFutura rPETG.json",
+        "filament/FormFutura rPETG 10GF.json",
+        "filament/Ginger rPLA.json",
+        "filament/colorFabb FOAM PLA.json"
+    ],
+    "printer_config": [
+        "printer/Ginger G1 3.0 nozzle - V2.json"
+    ],
+    "printer_preset_name": "Ginger G1 3.0 nozzle - V2",
+    "process_config": [
+        "process/1.50mm Standard V2.json",
+        "process/1.50mm VASEMODE V2.json"
+    ],
+    "version": ""
+}

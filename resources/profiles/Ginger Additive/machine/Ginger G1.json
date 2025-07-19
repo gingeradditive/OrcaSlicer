@@ -7,5 +7,5 @@
   "machine_tech": "FGF",
   "family": "Ginger",
   "bed_model": "Ginger_G1.stl",
-  "default_materials": "Ginger Generic PETG;Ginger Generic PLA"
+  "default_materials": "Generic PETG;Generic PLA"
 }
