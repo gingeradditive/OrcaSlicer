@@ -3,7 +3,6 @@
   "bed_custom_model": "",
   "enable_long_retraction_when_cut": "0",
   "from": "system",
-  "inherits": "Ginger_G1_common",
   "long_retractions_when_cut": [
     "0"
   ],
@@ -48,6 +47,9 @@
   ],
   "type": "machine",
   "name": "Ginger G1 3.0 nozzle",
+  "renamed_from":"ginger G1 3.0 nozzle",
   "printer_settings_id": "Ginger G1 3.0 nozzle",
-  "instantiation": "true"
+  "instantiation": "true",
+  "inherits": "fdm_machine_common",
+  "printer_model": "ginger G1"
 }
