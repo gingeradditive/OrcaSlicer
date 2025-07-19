@@ -151,7 +151,7 @@
   "seam_slope_entire_loop": "0",
   "seam_slope_inner_walls": "0",
   "seam_slope_min_length": "5",
-  "seam_slope_start_height": "50",
+  "seam_slope_start_height": "50%",
   "seam_slope_steps": "10",
   "seam_slope_type": "all",
   "single_extruder_multi_material_priming": "0",
